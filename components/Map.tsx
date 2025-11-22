@@ -2,9 +2,7 @@
 
 import dynamic from "next/dynamic";
 
-const SimpleMap = dynamic(
-  () => import("./MapClient"), // move your map component to a separate client-only file
-  { ssr: false }
-);
+// use a dynamic import to load the map component only on the client side
+const SimpleMap = dynamic(() => import("./MapClient"), { ssr: false });
 
 export default SimpleMap;

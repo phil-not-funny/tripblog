@@ -1,23 +1,25 @@
 import SimpleMap from "@/components/Map";
 import { getPostBySlug, getPostSlugs } from "@/lib/posts";
 import { BlogPostType, HikePost } from "@/types/content";
+import { Locale } from "@/types/internationalization";
 
 export async function generateStaticParams() {
-  return getPostSlugs(BlogPostType.HIKE).map((slug) => ({
-    slug: slug.replace(".md", ""),
-  }));
+  return Object.values(Locale).flatMap((locale) =>
+    getPostSlugs(BlogPostType.HIKE, locale).map((slug) => ({ locale, slug }))
+  );
 }
 
 export default async function HikesPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; lang: string }>;
 }) {
-  const { slug } = await params;
+  const { slug, lang } = await params;
 
   const post = (await getPostBySlug(
     BlogPostType.HIKE,
-    `${slug}.md`
+    slug,
+    lang as Locale
   )) as HikePost;
 
   const fm = post.frontmatter;
@@ -27,7 +29,7 @@ export default async function HikesPage({
       {/* Title block */}
       <header className="space-y-2">
         <h1 className="text-4xl font-semibold tracking-tight text-neutral-900">
-          {fm.destination}
+          {fm.title}
         </h1>
 
         <p className="text-sm font-medium text-neutral-600">{fm.type}</p>

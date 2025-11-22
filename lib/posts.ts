@@ -11,10 +11,11 @@ import {
   isTripFrontmatter,
   TripFrontmatter,
 } from "@/types/content";
+import { Locale } from "@/types/internationalization";
 
 const contentDir = path.join(process.cwd(), "content");
 
-export function getPostSlugs(type: BlogPostType): string[] {
+export function getPostSlugs(type: BlogPostType, locale: Locale): string[] {
   const dir = path.join(contentDir, type);
   const entries = fs.readdirSync(dir, { withFileTypes: true });
 
@@ -23,7 +24,8 @@ export function getPostSlugs(type: BlogPostType): string[] {
   return entries
     .filter((e) => e.isFile())
     .map((e) => e.name)
-    .filter((name) => name.endsWith(".md"));
+    .filter((name) => name.endsWith(`.${locale}.md`))
+    .map((name) => name.replace(`.${locale}.md`, ""));
 }
 
 export function asHumanReadable(slugs: string[]): string[] {
@@ -33,19 +35,23 @@ export function asHumanReadable(slugs: string[]): string[] {
 export function asSingleHumanReadable(slug: string): string {
   return (
     slug.charAt(0).toUpperCase() +
-    slug.slice(1).replace(/-/g, " ").replace(/\.md$/, "")
+    slug
+      .slice(1)
+      .replace(/-/g, " ")
+      .replace(/\.md$/, "")
+      .replace(new RegExp(`\\.${Locale.EN}|\\.${Locale.DE}|$`), "")
   );
 }
 
 export async function getPostBySlug(
   type: BlogPostType,
-  slug: string
+  slug: string,
+  locale: Locale
 ): Promise<BlogPost> {
   console.log("ℹ️ slug", slug);
   console.log("ℹ️ type", type);
 
-  const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = path.join(contentDir, type, slug);
+  const fullPath = path.join(contentDir, type, `${slug}.${locale}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
   const { data, content } = matter(fileContents);
@@ -59,23 +65,30 @@ export async function getPostBySlug(
   if (type === BlogPostType.TRIP) {
     return {
       type: BlogPostType.TRIP,
-      slug: realSlug,
+      slug: slug,
       frontmatter: data as TripFrontmatter,
       html: contentHtml,
+      locale: locale,
     };
   } else {
     return {
       type: BlogPostType.HIKE,
-      slug: realSlug,
+      slug: slug,
       frontmatter: data as HikeFrontmatter,
       html: contentHtml,
+      locale: locale,
     };
   }
 }
 
-export async function getAllPosts(type: BlogPostType): Promise<BlogPost[]> {
-  const slugs = getPostSlugs(type);
-  const posts = await Promise.all(slugs.map((s) => getPostBySlug(type, s)));
+export async function getAllPosts(
+  type: BlogPostType,
+  locale: Locale
+): Promise<BlogPost[]> {
+  const slugs = getPostSlugs(type, locale);
+  const posts = await Promise.all(
+    slugs.map((s) => getPostBySlug(type, s, locale))
+  );
   console.log("❓ posts", posts);
   return posts.sort((a, b) => {
     if (

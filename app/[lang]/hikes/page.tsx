@@ -4,10 +4,16 @@ import {
   getPostSlugs,
 } from "@/lib/posts";
 import { BlogPostType } from "@/types/content";
+import { Locale } from "@/types/internationalization";
 import Link from "next/link";
 
-export default async function HikesPage() {
-  const posts = getPostSlugs(BlogPostType.HIKE);
+export default async function HikesPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  const posts = getPostSlugs(BlogPostType.HIKE, lang as Locale);
   return (
     <div className="min-h-screen w-full flex flex-col items-center">
       <h1 className="text-2xl font-bold">HIKES</h1>
@@ -17,7 +23,7 @@ export default async function HikesPage() {
           <li key={slug} className="text-center">
             <Link
               className="hover:underline"
-              href={`/posts/hikes/${slug.replace(/.md$/, "")}`}
+              href={`/${lang}/hikes/${slug.replace(/.md$/, "")}`}
             >
               {asSingleHumanReadable(slug)}
             </Link>

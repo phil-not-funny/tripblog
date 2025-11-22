@@ -1,11 +1,26 @@
+import { Locale } from "./internationalization";
+
 export enum BlogPostType {
   TRIP = "trip",
   HIKE = "hike",
 }
 
 export type FrontmatterBase = {
+  title: string;
   introLat?: number;
   introLng?: number;
+  relatedLinks?: string[];
+};
+
+export function isFrontmatterBase(obj: any): obj is FrontmatterBase {
+  return (
+    typeof obj.title === "string" &&
+    (obj.introLat === undefined || typeof obj.introLat === "number") &&
+    (obj.introLng === undefined || typeof obj.introLng === "number") &&
+    (obj.relatedLinks === undefined ||
+      (Array.isArray(obj.relatedLinks) &&
+        obj.relatedLinks.every((link: any) => typeof link === "string")))
+  );
 }
 
 export enum TripType {
@@ -17,7 +32,6 @@ export enum TripType {
 }
 
 export type TripFrontmatter = FrontmatterBase & {
-  title: string;
   dateFrom: string;
   dateTo: string;
   country: string;
@@ -28,13 +42,13 @@ export type TripFrontmatter = FrontmatterBase & {
 
 export function isTripFrontmatter(obj: any): obj is TripFrontmatter {
   return (
-    typeof obj.title === "string" &&
     typeof obj.dateFrom === "string" &&
     typeof obj.dateTo === "string" &&
     typeof obj.country === "string" &&
     (obj.region === undefined || typeof obj.region === "string") &&
     typeof obj.name === "string" &&
-    Object.values(TripType).includes(obj.type)
+    Object.values(TripType).includes(obj.type) &&
+    isFrontmatterBase(obj)
   );
 }
 
@@ -81,22 +95,25 @@ export function isHikeFrontmatter(obj: any): obj is HikeFrontmatter {
     typeof obj.walkingMinutes === "number" &&
     (obj.totalMinutes === undefined || typeof obj.totalMinutes === "number") &&
     Object.values(HikeDifficulty).includes(obj.difficulty) &&
-    Object.values(HikeType).includes(obj.type)
+    Object.values(HikeType).includes(obj.type) &&
+    isFrontmatterBase(obj)
   );
 }
 
-export type HikePost = {
-  type: BlogPostType.HIKE;
+export type PostBase = {
   slug: string;
   html: string;
-  frontmatter: HikeFrontmatter;
+  locale: Locale;
 };
+
+export type HikePost = {
+  type: BlogPostType.HIKE;
+  frontmatter: HikeFrontmatter;
+} & PostBase;
 
 export type TripPost = {
   type: BlogPostType.TRIP;
-  slug: string;
-  html: string;
   frontmatter: TripFrontmatter;
-};
+} & PostBase;
 
-export type BlogPost = (HikePost | TripPost);
+export type BlogPost = HikePost | TripPost;

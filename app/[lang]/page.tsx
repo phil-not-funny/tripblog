@@ -1,4 +1,4 @@
-export default function Home() {
+export default function Home({ params }: { params: { lang: string } }) {
   return (
     <div className="min-h-screen w-full flex justify-center items-center">
       <h1 className="text-2xl font-bold">Welcome to My Blog</h1>
