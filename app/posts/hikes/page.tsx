@@ -1,5 +1,29 @@
+import {
+  asSingleHumanReadable,
+  getPostBySlug,
+  getPostSlugs,
+} from "@/lib/posts";
+import { BlogPostType } from "@/types/content";
+import Link from "next/link";
+
 export default async function HikesPage() {
+  const posts = getPostSlugs(BlogPostType.HIKE);
   return (
-    <div>This is the Hikes Page</div>
+    <div className="min-h-screen w-full flex flex-col items-center">
+      <h1 className="text-2xl font-bold">HIKES</h1>
+      <p className="w-full block text-center">Look at these hikes:</p>
+      <ul>
+        {posts.map((slug) => (
+          <li key={slug} className="text-center">
+            <Link
+              className="hover:underline"
+              href={`/posts/hikes/${slug.replace(/.md$/, "")}`}
+            >
+              {asSingleHumanReadable(slug)}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

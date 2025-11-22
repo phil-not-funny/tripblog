@@ -12,6 +12,8 @@ walkingMinutes: 105
 totalMinutes: 180
 difficulty: "experienced"
 type: "half-day"
+introLat: 47.689011
+introLng: 15.689504
 ---
 
 # Raxalpe

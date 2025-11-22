@@ -3,6 +3,11 @@ export enum BlogPostType {
   HIKE = "hike",
 }
 
+export type FrontmatterBase = {
+  introLat?: number;
+  introLng?: number;
+}
+
 export enum TripType {
   CITY = "city",
   NATURE = "nature",
@@ -11,12 +16,13 @@ export enum TripType {
   PARTY = "party",
 }
 
-export type TripFrontmatter = {
+export type TripFrontmatter = FrontmatterBase & {
   title: string;
   dateFrom: string;
   dateTo: string;
   country: string;
   region?: string;
+  name: string;
   type: TripType;
 };
 
@@ -27,6 +33,7 @@ export function isTripFrontmatter(obj: any): obj is TripFrontmatter {
     typeof obj.dateTo === "string" &&
     typeof obj.country === "string" &&
     (obj.region === undefined || typeof obj.region === "string") &&
+    typeof obj.name === "string" &&
     Object.values(TripType).includes(obj.type)
   );
 }
@@ -44,7 +51,7 @@ export enum HikeDifficulty {
   EXPERT = "expert",
 }
 
-export type HikeFrontmatter = {
+export type HikeFrontmatter = FrontmatterBase & {
   destination: string;
   massive?: string;
   from: string;
@@ -92,4 +99,4 @@ export type TripPost = {
   frontmatter: TripFrontmatter;
 };
 
-export type BlogPost = HikePost | TripPost;
+export type BlogPost = (HikePost | TripPost);
