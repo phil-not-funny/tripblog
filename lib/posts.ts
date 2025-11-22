@@ -19,8 +19,6 @@ export function getPostSlugs(type: BlogPostType, locale: Locale): string[] {
   const dir = path.join(contentDir, type);
   const entries = fs.readdirSync(dir, { withFileTypes: true });
 
-  console.log("🔎 Entries in dir", entries);
-
   return entries
     .filter((e) => e.isFile())
     .map((e) => e.name)
@@ -48,9 +46,6 @@ export async function getPostBySlug(
   slug: string,
   locale: Locale
 ): Promise<BlogPost> {
-  console.log("ℹ️ slug", slug);
-  console.log("ℹ️ type", type);
-
   const fullPath = path.join(contentDir, type, `${slug}.${locale}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
