@@ -1,6 +1,7 @@
 import {
   asHumanReadable,
   asSingleHumanReadable,
+  getPostBySlug,
   getPostSlugs,
 } from "@/lib/posts";
 import { BlogPostType } from "@/types/content";
@@ -25,7 +26,9 @@ export default async function TripsPage({
               className="hover:underline"
               href={`/${lang}/trips/${slug.replace(/.md$/, "")}`}
             >
-              {asSingleHumanReadable(slug)}
+              {getPostBySlug(BlogPostType.TRIP, slug, lang as Locale).then(
+                (post) => post.frontmatter.title
+              )}
             </Link>
           </li>
         ))}

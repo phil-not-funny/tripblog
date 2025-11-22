@@ -25,7 +25,9 @@ export default async function HikesPage({
               className="hover:underline"
               href={`/${lang}/hikes/${slug.replace(/.md$/, "")}`}
             >
-              {asSingleHumanReadable(slug)}
+              {getPostBySlug(BlogPostType.HIKE, slug, lang as Locale).then(
+                (post) => post.frontmatter.title
+              )}
             </Link>
           </li>
         ))}
