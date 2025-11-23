@@ -33,6 +33,7 @@
       "labels": {
         "title": "Title",
         "destination": "Destination",
+        "lastDone": "Last Done",
         "massive": "Massive",
         "from": "Start Point",
         "viaReturn": "Via Return",
@@ -57,10 +58,18 @@
       },
       "map": "Map"
     },
+    "settings": {
+      "selectLanguage": "Select Language"
+    },
     "yes": "Yes",
     "no": "No",
     "from": "from",
     "to": "to",
-    "via": "via"
+    "via": "via",
+    "noData": "No data"
+  },
+  "locales": {
+    "en": "English",
+    "de": "German (Deutsch)"
   }
 }

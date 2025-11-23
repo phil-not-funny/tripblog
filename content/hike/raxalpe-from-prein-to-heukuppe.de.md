@@ -1,6 +1,8 @@
 ---
 title: "Heukuppe (Raxalpe) vom Preiner Gscheid"
+shortDescription: "Hinauf über den Gretchensteig eignet sich diese Tour als perfekte Frühlingswanderung."
 destination: "Heukuppe"
+lastDone: "2025-08-20"
 massive: "Raxalpe"
 from: "Preiner Gscheid"
 viaReturn: "Waxriegelhaus"

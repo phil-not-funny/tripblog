@@ -33,6 +33,7 @@
       "labels": {
         "title": "Titel",
         "destination": "Ziel",
+        "lastDone": "Zuletzt begangen",
         "massive": "Massiv",
         "from": "Startpunkt",
         "viaReturn": "Rückweg über",
@@ -57,10 +58,18 @@
       },
       "map": "Karte"
     },
+    "settings": {
+      "selectLanguage": "Sprache auswählen"
+    },
     "yes": "Ja",
     "no": "Nein",
     "from": "von",
     "to": "bis",
-    "via": "über"
+    "via": "über",
+    "noData": "Keine Daten"
+  },
+  "locales": {
+    "en": "Englisch (English)",
+    "de": "Deutsch"
   }
 }

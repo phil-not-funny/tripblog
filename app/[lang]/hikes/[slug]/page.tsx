@@ -5,6 +5,7 @@ import { Locale } from "@/types/internationalization";
 import { getDictionary } from "../../dictionaries";
 import { ArrowUpRight, LandPlot, MapPin, TypeIcon } from "lucide-react";
 import TripFacts, { TripFact } from "@/components/TripFacts";
+import { formatDateByLocale } from "@/lib/date";
 
 export async function generateStaticParams() {
   return Object.values(Locale).flatMap((locale) =>
@@ -52,7 +53,7 @@ export default async function HikesPage({
     {
       icon: "land-plot",
       label: dict.hikes.dynamic.labels.massive,
-      value: fm.massive || dict.global.no,
+      value: fm.massive,
     },
     {
       icon: "route",
@@ -62,13 +63,13 @@ export default async function HikesPage({
     {
       icon: "arrow-up-right",
       label: dict.hikes.dynamic.labels.viaUp,
-      value: fm.viaUp || dict.global.no,
+      value: fm.viaUp,
       borderAbove: true,
     },
     {
       icon: "arrow-down-right",
       label: dict.hikes.dynamic.labels.viaReturn,
-      value: fm.viaReturn || dict.global.no,
+      value: fm.viaReturn,
       borderAbove: true,
     },
     {
@@ -106,9 +107,11 @@ export default async function HikesPage({
   return (
     <article className="max-w-3xl mx-auto px-6 py-16 space-y-8">
       <header>
-        <h1 className="text-4xl font-semibold tracking-tight pb-1 border-b border-b-neutral-500 text-neutral-900">
+        <h1 className="text-4xl font-semibold tracking-tight my-3 text-neutral-900">
           {fm.title}
         </h1>
+        <p className="text-neutral-700">{fm.shortDescription}</p>
+        <div className="max-w-1/3 border-b mb-3 border-b-neutral-600"></div>
         <p className="text-sm text-neutral-600">
           <b>{dict.hikes.dynamic.detailedName}:</b> {formatTitle(fm)}
         </p>
@@ -120,6 +123,12 @@ export default async function HikesPage({
           <b>{dict.hikes.dynamic.labels.type}:</b>{" "}
           {dict.hikes.dynamic.enums.type[fm.type]}
         </p>
+        {fm.lastDone && (
+          <p className="text-sm text-neutral-600">
+            <b>{dict.hikes.dynamic.labels.lastDone}:</b>{" "}
+            {formatDateByLocale(fm.lastDone, lang as Locale)}
+          </p>
+        )}
       </header>
 
       <TripFacts facts={facts} lang={lang as Locale} />

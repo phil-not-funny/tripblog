@@ -1,5 +1,6 @@
 ---
 title: "Edinburgh Trip 2025"
+shortDescription: "Edinburgh ist mit Sicherheit einer der 10 schönsten europäischen Städte."
 dateFrom: "2025-11-12"
 dateTo: "2025-11-13"
 country: "United Kingdom"

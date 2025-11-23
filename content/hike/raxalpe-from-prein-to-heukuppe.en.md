@@ -1,6 +1,8 @@
 ---
 title: "Heukuppe (Raxalpe) from Preiner Gscheid"
+shortDescription: "Up the Gretchensteig makes this hike the perfect for spring-lovers"
 destination: "Heukuppe"
+lastDone: "2025-08-20"
 massive: "Raxalpe"
 from: "Preiner Gscheid"
 viaReturn: "Waxriegelhaus"

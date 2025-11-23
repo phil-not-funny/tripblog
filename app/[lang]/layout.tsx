@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./../globals.css";
 import "leaflet/dist/leaflet.css";
 import Navbar from "@/components/Navbar";
+import { NextIntlClientProvider } from "next-intl";
+import { CookiesProvider } from "next-client-cookies/server";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,16 +29,21 @@ export default async function LocaleLayout({
   params: Promise<{ slug: string; lang: string }>;
 }) {
   const { lang } = await params;
+  const messages = (await import(`../../dictionaries/${lang}.json`)).default;
 
   return (
     <html lang={lang}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-display antialiased`}
       >
-        <Navbar locale={lang} />
-        <main className="min-h-screen from-green-100 to-amber-100 bg-linear-to-b p-4">
-          {children}
-        </main>
+        <NextIntlClientProvider locale={lang} messages={messages}>
+          <CookiesProvider>
+            <Navbar locale={lang} />
+            <main className="min-h-screen from-green-100 to-amber-100 bg-linear-to-b p-4">
+              {children}
+            </main>
+          </CookiesProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

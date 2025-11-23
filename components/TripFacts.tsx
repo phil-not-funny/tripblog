@@ -28,6 +28,7 @@ export default async function TripFacts({
             value={fact.value}
             colspan={fact.colspan}
             borderAbove={fact.borderAbove}
+            lang={lang}
           />
         ))}
       </ul>
@@ -38,18 +39,21 @@ export default async function TripFacts({
 export interface TripFact {
   icon: IconName;
   label: string;
-  value: string | number;
+  value?: string | number;
   colspan?: boolean;
   borderAbove?: boolean;
 }
 
-export function TripFact({
+export async function TripFact({
   icon,
   label,
   value,
   colspan = false,
   borderAbove = false,
-}: TripFact) {
+  lang,
+}: TripFact & { lang: Locale }) {
+  const dict = await getDictionary(lang);
+
   return (
     <li
       className={`flex flex-row gap-2 ${colspan && "col-span-2"} ${
@@ -64,7 +68,9 @@ export function TripFact({
           <TooltipContent>{label}</TooltipContent>
         </Tooltip>
       </span>
-      <span>{value}</span>
+      <span className={!value ? "italic" : undefined}>
+        {value ?? dict.global.noData}
+      </span>
     </li>
   );
 }

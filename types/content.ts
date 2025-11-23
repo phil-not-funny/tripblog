@@ -7,6 +7,7 @@ export enum BlogPostType {
 
 export type FrontmatterBase = {
   title: string;
+  shortDescription?: string;
   introLat?: number;
   introLng?: number;
   relatedLinks?: string[];
@@ -19,7 +20,9 @@ export function isFrontmatterBase(obj: any): obj is FrontmatterBase {
     (obj.introLng === undefined || typeof obj.introLng === "number") &&
     (obj.relatedLinks === undefined ||
       (Array.isArray(obj.relatedLinks) &&
-        obj.relatedLinks.every((link: any) => typeof link === "string")))
+        obj.relatedLinks.every((link: any) => typeof link === "string"))) &&
+    (obj.shortDescription === undefined ||
+      typeof obj.shortDescription === "string")
   );
 }
 
@@ -66,6 +69,7 @@ export enum HikeDifficulty {
 
 export type HikeFrontmatter = FrontmatterBase & {
   destination: string;
+  lastDone?: string;
   massive?: string;
   from: string;
   viaUp?: string;
@@ -95,6 +99,7 @@ export function isHikeFrontmatter(obj: any): obj is HikeFrontmatter {
     (obj.totalMinutes === undefined || typeof obj.totalMinutes === "number") &&
     Object.values(HikeDifficulty).includes(obj.difficulty) &&
     Object.values(HikeType).includes(obj.type) &&
+    (obj.lastDone === undefined || typeof obj.lastDone === "string") &&
     isFrontmatterBase(obj)
   );
 }
