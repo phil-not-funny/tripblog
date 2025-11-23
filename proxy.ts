@@ -6,7 +6,6 @@ import { Locale } from "./types/internationalization";
 let headers = { "accept-language": "en-US,en;q=0.5" };
 let languages = new Negotiator({ headers }).languages();
 let locales = Object.values(Locale) as string[];
-console.log(locales);
 
 let defaultLocale = "en";
 

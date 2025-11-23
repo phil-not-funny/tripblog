@@ -26,7 +26,7 @@ export function isFrontmatterBase(obj: any): obj is FrontmatterBase {
 export enum TripType {
   CITY = "city",
   NATURE = "nature",
-  SUMMER = "summer",
+  BEACH = "beach",
   WINTER = "winter",
   PARTY = "party",
 }
@@ -53,9 +53,8 @@ export function isTripFrontmatter(obj: any): obj is TripFrontmatter {
 }
 
 export enum HikeType {
-  HALF_DAY = "half-day",
-  FULL_DAY = "full-day",
-  MULTI_DAY = "multi-day",
+  CIRCULAR = "circular",
+  LINEAR = "linear",
 }
 
 export enum HikeDifficulty {

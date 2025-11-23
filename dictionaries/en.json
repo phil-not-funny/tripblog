@@ -1,0 +1,66 @@
+{
+  "home": {
+    "welcome": "Welcome to my blog"
+  },
+  "trips": {
+    "dynamic": {
+      "enums": {
+        "tripType": {
+          "city": "City Trip",
+          "nature": "Nature Vacation",
+          "beach": "Beach Vacation",
+          "winter": "Winter Vacation",
+          "party": "Party Trip"
+        }
+      },
+      "labels": {}
+    }
+  },
+  "hikes": {
+    "dynamic": {
+      "enums": {
+        "difficulty": {
+          "beginner": "Beginner",
+          "intermediate": "Intermediate",
+          "experienced": "Experienced",
+          "expert": "Expert"
+        },
+        "type": {
+          "circular": "Circular",
+          "linear": "Linear"
+        }
+      },
+      "labels": {
+        "title": "Title",
+        "destination": "Destination",
+        "massive": "Massive",
+        "from": "Start Point",
+        "viaReturn": "Via Return",
+        "viaUp": "Via Up",
+        "path": "Path",
+        "fromHM": "Starting Elevation",
+        "toHM": "Ending Elevation",
+        "totalHM": "Total Elevation Gain",
+        "walkingMinutes": "Estimated Walking Time",
+        "totalMinutes": "Estimated Total Time",
+        "difficulty": "Hike Difficulty",
+        "type": "Hike Type"
+      },
+      "tourInfo": "Tour Info",
+      "detailedName": "Detailed Name"
+    }
+  },
+  "global": {
+    "dynamic": {
+      "labels": {
+        "relatedLinks": "Related Links"
+      },
+      "map": "Map"
+    },
+    "yes": "Yes",
+    "no": "No",
+    "from": "from",
+    "to": "to",
+    "via": "via"
+  }
+}

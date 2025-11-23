@@ -1,0 +1,66 @@
+{
+  "home": {
+    "welcome": "Willkommen auf meinem Blog"
+  },
+  "trips": {
+    "dynamic": {
+      "enums": {
+        "tripType": {
+          "city": "Städtereise",
+          "nature": "Natururlaub",
+          "beach": "Strandurlaub",
+          "winter": "Winterurlaub",
+          "party": "Partyreise"
+        }
+      },
+      "labels": {}
+    }
+  },
+  "hikes": {
+    "dynamic": {
+      "enums": {
+        "difficulty": {
+          "beginner": "Anfänger",
+          "intermediate": "Fortgeschritten",
+          "experienced": "Erfahren",
+          "expert": "Experte"
+        },
+        "type": {
+          "circular": "Rundweg",
+          "linear": "Linear"
+        }
+      },
+      "labels": {
+        "title": "Titel",
+        "destination": "Ziel",
+        "massive": "Massiv",
+        "from": "Startpunkt",
+        "viaReturn": "Rückweg über",
+        "viaUp": "Hinweg über",
+        "path": "Weg",
+        "fromHM": "Start-HM",
+        "toHM": "Ziel-HM",
+        "totalHM": "HM Insgesamt",
+        "walkingMinutes": "Geschätzte Gehzeit",
+        "totalMinutes": "Geschätzte Gesamtzeit",
+        "difficulty": "Schwierigkeit der Wanderung",
+        "type": "Art der Wanderung"
+      },
+      "tourInfo": "Tour-Eckdaten",
+      "detailedName": "Detaillierte Bezeichnung"
+    }
+  },
+  "global": {
+    "dynamic": {
+      "labels": {
+        "relatedLinks": "Verwandte Links"
+      },
+      "map": "Karte"
+    },
+    "yes": "Ja",
+    "no": "Nein",
+    "from": "von",
+    "to": "bis",
+    "via": "über"
+  }
+}

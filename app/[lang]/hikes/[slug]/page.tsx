@@ -1,7 +1,10 @@
 import SimpleMap from "@/components/Map";
 import { getPostBySlug, getPostSlugs } from "@/lib/posts";
-import { BlogPostType, HikePost } from "@/types/content";
+import { BlogPostType, HikeFrontmatter, HikePost } from "@/types/content";
 import { Locale } from "@/types/internationalization";
+import { getDictionary } from "../../dictionaries";
+import { ArrowUpRight, LandPlot, MapPin, TypeIcon } from "lucide-react";
+import TripFacts, { TripFact } from "@/components/TripFacts";
 
 export async function generateStaticParams() {
   return Object.values(Locale).flatMap((locale) =>
@@ -24,48 +27,102 @@ export default async function HikesPage({
 
   const fm = post.frontmatter;
 
+  const dict = await getDictionary(lang as Locale);
+
+  const formatTitle = (fm: HikeFrontmatter): string => {
+    return `${fm.destination}${fm.massive && ` (${fm.massive})`} ${
+      dict.global.from
+    } ${fm.from} ${
+      fm.viaUp ||
+      (fm.viaReturn && `${dict.global.via} ${fm.viaUp || fm.viaReturn}`)
+    }`;
+  };
+
+  const facts: TripFact[] = [
+    {
+      icon: "parking-circle",
+      label: dict.hikes.dynamic.labels.from,
+      value: fm.from,
+    },
+    {
+      icon: "mountain",
+      label: dict.hikes.dynamic.labels.destination,
+      value: fm.destination,
+    },
+    {
+      icon: "land-plot",
+      label: dict.hikes.dynamic.labels.massive,
+      value: fm.massive || dict.global.no,
+    },
+    {
+      icon: "route",
+      label: dict.hikes.dynamic.labels.path,
+      value: fm.path,
+    },
+    {
+      icon: "arrow-up-right",
+      label: dict.hikes.dynamic.labels.viaUp,
+      value: fm.viaUp || dict.global.no,
+      borderAbove: true,
+    },
+    {
+      icon: "arrow-down-right",
+      label: dict.hikes.dynamic.labels.viaReturn,
+      value: fm.viaReturn || dict.global.no,
+      borderAbove: true,
+    },
+    {
+      icon: "arrow-up-from-line",
+      label: dict.hikes.dynamic.labels.fromHM,
+      value: `${fm.fromHM} m`,
+      borderAbove: true,
+    },
+    {
+      icon: "arrow-up-to-line",
+      label: dict.hikes.dynamic.labels.toHM,
+      value: `${fm.toHM} m`,
+      borderAbove: true,
+    },
+    {
+      icon: "move-vertical",
+      label: dict.hikes.dynamic.labels.totalHM,
+      value: `${fm.totalHM} m`,
+      colspan: true,
+    },
+    {
+      icon: "clock-4",
+      label: dict.hikes.dynamic.labels.walkingMinutes,
+      value: `${fm.walkingMinutes} min`,
+      borderAbove: true,
+    },
+    {
+      icon: "clock-fading",
+      label: dict.hikes.dynamic.labels.totalMinutes,
+      value: `${fm.totalMinutes} min`,
+      borderAbove: true,
+    },
+  ];
+
   return (
     <article className="max-w-3xl mx-auto px-6 py-16 space-y-8">
-      {/* Title block */}
-      <header className="space-y-2">
-        <h1 className="text-4xl font-semibold tracking-tight text-neutral-900">
+      <header>
+        <h1 className="text-4xl font-semibold tracking-tight pb-1 border-b border-b-neutral-500 text-neutral-900">
           {fm.title}
         </h1>
-
-        <p className="text-sm font-medium text-neutral-600">{fm.type}</p>
+        <p className="text-sm text-neutral-600">
+          <b>{dict.hikes.dynamic.detailedName}:</b> {formatTitle(fm)}
+        </p>
+        <p className="text-sm text-neutral-600">
+          <b>{dict.hikes.dynamic.labels.difficulty}:</b>{" "}
+          {dict.hikes.dynamic.enums.difficulty[fm.difficulty]}
+        </p>
+        <p className="text-sm text-neutral-600">
+          <b>{dict.hikes.dynamic.labels.type}:</b>{" "}
+          {dict.hikes.dynamic.enums.type[fm.type]}
+        </p>
       </header>
 
-      {/* Metadata card */}
-      <section className="p-6 bg-white/70 backdrop-blur rounded-2xl shadow-sm border border-white/40 space-y-2">
-        <h2 className="text-lg font-semibold text-neutral-800">Tour Info</h2>
-
-        <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-1 text-neutral-700">
-          <li>
-            <span className="font-medium">Massiv:</span> {fm.massive}
-          </li>
-          <li>
-            <span className="font-medium">Start:</span> {fm.from}
-          </li>
-          <li>
-            <span className="font-medium">Aufstieg via:</span> {fm.viaUp}
-          </li>
-          <li>
-            <span className="font-medium">Abstieg via:</span> {fm.viaReturn}
-          </li>
-          <li>
-            <span className="font-medium">Höhenmeter:</span> {fm.totalHM} hm
-          </li>
-          <li>
-            <span className="font-medium">Gehzeit:</span> {fm.totalMinutes} min
-          </li>
-          <li>
-            <span className="font-medium">Schwierigkeit:</span> {fm.difficulty}
-          </li>
-          <li>
-            <span className="font-medium">Weg:</span> {fm.path}
-          </li>
-        </ul>
-      </section>
+      <TripFacts facts={facts} lang={lang as Locale} />
 
       {fm.introLat && fm.introLng && (
         <SimpleMap lat={fm.introLat} lng={fm.introLng} zoom={12} />

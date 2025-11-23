@@ -11,7 +11,7 @@ totalHM: 1150
 walkingMinutes: 105
 totalMinutes: 180
 difficulty: "experienced"
-type: "half-day"
+type: "circular"
 introLat: 47.689011
 introLng: 15.689504
 relatedLinks:
