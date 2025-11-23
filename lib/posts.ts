@@ -22,6 +22,7 @@ export function getPostSlugs(type: BlogPostType, locale: Locale): string[] {
   return entries
     .filter((e) => e.isFile())
     .map((e) => e.name)
+    .filter((name) => !name.includes("template"))
     .filter((name) => name.endsWith(`.${locale}.md`))
     .map((name) => name.replace(`.${locale}.md`, ""));
 }
