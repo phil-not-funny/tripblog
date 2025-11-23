@@ -50,7 +50,7 @@ export default function Navbar({ locale }: { locale: string }) {
   };
 
   return (
-    <NavigationMenu className="p-4 shadow-md min-w-full relative">
+    <NavigationMenu className="p-4 shadow-md min-w-full relative md:block flex flex-col gap-2 md:gap-0">
       <NavigationMenuList>
         {navItems.map((item, idx) => (
           <NavigationMenuItem key={item.label}>
@@ -67,7 +67,7 @@ export default function Navbar({ locale }: { locale: string }) {
       </NavigationMenuList>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button className="absolute right-2 top-2 p-4" variant={"ghost"}>
+          <Button className="md:absolute right-2 top-2 p-4" variant={"ghost"}>
             {t("components.Navbar.selectLanguage")}{" "}
             <LanguagesIcon className="size-5" />
           </Button>
