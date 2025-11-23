@@ -4,7 +4,7 @@ import { BlogPostType, HikeFrontmatter, HikePost } from "@/types/content";
 import { Locale } from "@/types/internationalization";
 import { getDictionary } from "../../dictionaries";
 import { ArrowUpRight, LandPlot, MapPin, TypeIcon } from "lucide-react";
-import TripFacts, { TripFact } from "@/components/TripFacts";
+import BlogFacts, { BlogFact } from "@/components/BlogFacts";
 import { formatDateByLocale } from "@/lib/date";
 
 export async function generateStaticParams() {
@@ -39,7 +39,7 @@ export default async function HikesPage({
     }`;
   };
 
-  const facts: TripFact[] = [
+  const facts: BlogFact[] = [
     {
       icon: "parking-circle",
       label: dict.hikes.dynamic.labels.from,
@@ -107,10 +107,10 @@ export default async function HikesPage({
   return (
     <article className="max-w-3xl mx-auto px-6 py-16 space-y-8">
       <header>
-        <h1 className="text-4xl font-semibold tracking-tight my-3 text-neutral-900">
+        <h1 className="text-4xl font-semibold tracking-tight text-neutral-900">
           {fm.title}
         </h1>
-        <p className="text-neutral-700">{fm.shortDescription}</p>
+        <p className="text-neutral-700 my-3">{fm.shortDescription}</p>
         <div className="max-w-1/3 border-b mb-3 border-b-neutral-600"></div>
         <p className="text-sm text-neutral-600">
           <b>{dict.hikes.dynamic.detailedName}:</b> {formatTitle(fm)}
@@ -131,7 +131,11 @@ export default async function HikesPage({
         )}
       </header>
 
-      <TripFacts facts={facts} lang={lang as Locale} />
+      <BlogFacts
+        facts={facts}
+        lang={lang as Locale}
+        title={dict.hikes.dynamic.infoBlock}
+      />
 
       {fm.introLat && fm.introLng && (
         <SimpleMap lat={fm.introLat} lng={fm.introLng} zoom={12} />

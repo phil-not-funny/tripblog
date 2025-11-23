@@ -22,17 +22,18 @@ import { useParams, usePathname, useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useCookies } from "next-client-cookies";
 
-const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/trips", label: "Trips" },
-  { href: "/hikes", label: "Hikes" },
-];
-
 export default function Navbar({ locale }: { locale: string }) {
   const router = useRouter();
   const pathname = usePathname();
   const params = useParams();
   const cookies = useCookies();
+  const t = useTranslations();
+
+  const navItems = [
+    { href: "/", label: "Home" },
+    { href: "/trips", label: t("global.trips") },
+    { href: "/hikes", label: t("global.hikes") },
+  ];
 
   const [selectedLocale, setSelectedLocale] = useState<Locale>(
     (params?.lang as Locale) || Locale.EN
@@ -47,8 +48,6 @@ export default function Navbar({ locale }: { locale: string }) {
       sameSite: "lax",
     });
   };
-
-  const t = useTranslations();
 
   return (
     <NavigationMenu className="p-4 shadow-md min-w-full relative">
@@ -69,7 +68,7 @@ export default function Navbar({ locale }: { locale: string }) {
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button className="absolute right-2 top-2 p-4" variant={"ghost"}>
-            {t("global.settings.selectLanguage")}{" "}
+            {t("components.Navbar.selectLanguage")}{" "}
             <LanguagesIcon className="size-5" />
           </Button>
         </DropdownMenuTrigger>

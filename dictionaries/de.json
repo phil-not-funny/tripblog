@@ -5,7 +5,7 @@
   "trips": {
     "dynamic": {
       "enums": {
-        "tripType": {
+        "type": {
           "city": "Städtereise",
           "nature": "Natururlaub",
           "beach": "Strandurlaub",
@@ -13,7 +13,12 @@
           "party": "Partyreise"
         }
       },
-      "labels": {}
+      "labels": {
+        "dateRange": "Reisezeitraum",
+        "location": "Reiseziel",
+        "type": "Art"
+      },
+      "infoBlock": "Reise-Eckdaten"
     }
   },
   "hikes": {
@@ -47,7 +52,7 @@
         "difficulty": "Schwierigkeit der Wanderung",
         "type": "Art der Wanderung"
       },
-      "tourInfo": "Tour-Eckdaten",
+      "infoBlock": "Tour-Eckdaten",
       "detailedName": "Detaillierte Bezeichnung"
     }
   },
@@ -56,17 +61,21 @@
       "labels": {
         "relatedLinks": "Verwandte Links"
       },
-      "map": "Karte"
-    },
-    "settings": {
-      "selectLanguage": "Sprache auswählen"
+      "map": "Karte",
+      "noData": "Keine Daten"
     },
     "yes": "Ja",
     "no": "Nein",
     "from": "von",
     "to": "bis",
     "via": "über",
-    "noData": "Keine Daten"
+    "trips": "Reisen",
+    "hikes": "Touren"
+  },
+  "components": {
+    "Navbar": {
+      "selectLanguage": "Sprache auswählen"
+    }
   },
   "locales": {
     "en": "Englisch (English)",

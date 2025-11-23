@@ -36,7 +36,7 @@ export enum TripType {
 
 export type TripFrontmatter = FrontmatterBase & {
   dateFrom: string;
-  dateTo: string;
+  dateTo?: string;
   country: string;
   region?: string;
   name: string;
@@ -46,7 +46,7 @@ export type TripFrontmatter = FrontmatterBase & {
 export function isTripFrontmatter(obj: any): obj is TripFrontmatter {
   return (
     typeof obj.dateFrom === "string" &&
-    typeof obj.dateTo === "string" &&
+    (obj.dateTo === undefined || typeof obj.dateTo === "string") &&
     typeof obj.country === "string" &&
     (obj.region === undefined || typeof obj.region === "string") &&
     typeof obj.name === "string" &&

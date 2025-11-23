@@ -1,6 +1,6 @@
 ---
 title: "Edinburgh Kurzurlaub 2025"
-shortDescription: "Edinburgh is easily among my top 10 most beuatiful cities in Europe."
+shortDescription: "Edinburgh ist mit Sicherheit einer der 10 schönsten europäischen Städte."
 dateFrom: "2025-11-12"
 dateTo: "2025-11-13"
 country: "Vereinigtes Königreich"

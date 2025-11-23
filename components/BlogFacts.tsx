@@ -4,24 +4,24 @@ import { Locale } from "@/types/internationalization";
 import { DynamicIcon, IconName } from "lucide-react/dynamic";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
-export default async function TripFacts({
+export default async function BlogFacts({
   facts,
   lang,
+  title,
 }: {
-  facts: TripFact[];
+  facts: BlogFact[];
   lang: Locale;
+  title: string;
 }) {
   const dict = await getDictionary(lang);
 
   return (
     <section className="p-6 bg-white/60 backdrop-blur rounded-2xl shadow-sm space-y-2">
-      <h2 className="text-lg font-semibold text-neutral-800">
-        {dict.hikes.dynamic.tourInfo}
-      </h2>
+      <h2 className="text-lg font-semibold text-neutral-800">{title}</h2>
 
       <ul className="grid sm:grid-cols-2 gap-y-1 text-neutral-700">
         {facts.map((fact, index) => (
-          <TripFact
+          <BlogFact
             key={index}
             icon={fact.icon}
             label={fact.label}
@@ -36,7 +36,7 @@ export default async function TripFacts({
   );
 }
 
-export interface TripFact {
+export interface BlogFact {
   icon: IconName;
   label: string;
   value?: string | number;
@@ -44,14 +44,14 @@ export interface TripFact {
   borderAbove?: boolean;
 }
 
-export async function TripFact({
+export async function BlogFact({
   icon,
   label,
   value,
   colspan = false,
   borderAbove = false,
   lang,
-}: TripFact & { lang: Locale }) {
+}: BlogFact & { lang: Locale }) {
   const dict = await getDictionary(lang);
 
   return (
@@ -69,7 +69,7 @@ export async function TripFact({
         </Tooltip>
       </span>
       <span className={!value ? "italic" : undefined}>
-        {value ?? dict.global.noData}
+        {value ?? dict.global.dynamic.noData}
       </span>
     </li>
   );

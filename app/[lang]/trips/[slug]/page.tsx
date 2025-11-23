@@ -2,6 +2,9 @@ import SimpleMap from "@/components/Map";
 import { getPostBySlug, getPostSlugs } from "@/lib/posts";
 import { BlogPostType, TripPost } from "@/types/content";
 import { Locale } from "@/types/internationalization";
+import { getDictionary } from "../../dictionaries";
+import BlogFacts, { BlogFact } from "@/components/BlogFacts";
+import { formatDateByLocale } from "@/lib/date";
 
 export async function generateStaticParams() {
   return Object.values(Locale).flatMap((locale) =>
@@ -24,41 +27,45 @@ export default async function TripPage({
 
   const fm = post.frontmatter;
 
+  const dict = await getDictionary(lang as Locale);
+
+  const facts: BlogFact[] = [
+    {
+      icon: "calendar",
+      label: dict.trips.dynamic.labels.dateRange,
+      value: `${formatDateByLocale(fm.dateFrom, lang as Locale, "medium")}${
+        fm.dateTo &&
+        " - " + formatDateByLocale(fm.dateTo, lang as Locale, "medium")
+      }`,
+      colspan: true,
+    },
+    {
+      icon: "map-pinned",
+      label: dict.trips.dynamic.labels.location,
+      value: `${fm.name}, ${fm.region && fm.region + ", "}${fm.country}`,
+    },
+  ];
+
   return (
-    <article className="max-w-3xl mx-auto px-6 py-16 space-y-12">
-      {/* Header */}
-      <header className="space-y-2">
+    <article className="max-w-3xl mx-auto px-6 py-16 space-y-8">
+      <header>
         <h1 className="text-4xl font-semibold tracking-tight text-neutral-900">
           {fm.title}
         </h1>
-
+        <p className="text-neutral-700 my-3">{fm.shortDescription}</p>
+        <div className="max-w-1/3 border-b mb-3 border-b-neutral-600"></div>
         <p className="text-sm text-neutral-600">
-          {fm.type} trip • {fm.region}, {fm.country}
+          <b>{dict.trips.dynamic.labels.type}:</b>{" "}
+          {dict.trips.dynamic.enums.type[fm.type]}
         </p>
       </header>
 
-      {/* Trip meta info */}
-      <section className="p-6 bg-white/70 backdrop-blur rounded-2xl shadow-sm border border-white/40 space-y-4">
-        <h2 className="text-lg font-semibold text-neutral-800">Trip Info</h2>
+      <BlogFacts
+        lang={lang as Locale}
+        title={dict.trips.dynamic.infoBlock}
+        facts={facts}
+      />
 
-        <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-1 text-neutral-700">
-          <li>
-            <span className="font-medium">From:</span> {fm.dateFrom}
-          </li>
-          <li>
-            <span className="font-medium">To:</span> {fm.dateTo}
-          </li>
-          <li>
-            <span className="font-medium">Country:</span> {fm.country}
-          </li>
-          <li>
-            <span className="font-medium">Region:</span> {fm.region}
-          </li>
-          <li>
-            <span className="font-medium">Type:</span> {fm.type}
-          </li>
-        </ul>
-      </section>
       {fm.introLat && fm.introLng && (
         <SimpleMap lat={fm.introLat} lng={fm.introLng} zoom={12} />
       )}

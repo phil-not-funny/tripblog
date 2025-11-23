@@ -5,7 +5,7 @@
   "trips": {
     "dynamic": {
       "enums": {
-        "tripType": {
+        "type": {
           "city": "City Trip",
           "nature": "Nature Vacation",
           "beach": "Beach Vacation",
@@ -13,7 +13,12 @@
           "party": "Party Trip"
         }
       },
-      "labels": {}
+      "labels": {
+        "dateRange": "Date Range",
+        "location": "Location",
+        "type": "Type"
+      },
+      "infoBlock": "Trip Info"
     }
   },
   "hikes": {
@@ -47,7 +52,7 @@
         "difficulty": "Hike Difficulty",
         "type": "Hike Type"
       },
-      "tourInfo": "Tour Info",
+      "infoBlock": "Hike Info",
       "detailedName": "Detailed Name"
     }
   },
@@ -56,17 +61,21 @@
       "labels": {
         "relatedLinks": "Related Links"
       },
-      "map": "Map"
-    },
-    "settings": {
-      "selectLanguage": "Select Language"
+      "map": "Map",
+      "noData": "No Data"
     },
     "yes": "Yes",
     "no": "No",
     "from": "from",
     "to": "to",
     "via": "via",
-    "noData": "No data"
+    "trips": "Trips",
+    "hikes": "Hikes"
+  },
+  "components": {
+    "Navbar": {
+      "selectLanguage": "Select Language"
+    }
   },
   "locales": {
     "en": "English",
