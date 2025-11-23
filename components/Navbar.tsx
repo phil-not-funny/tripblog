@@ -56,7 +56,7 @@ export default function Navbar({ locale }: { locale: string }) {
           <NavigationMenuItem key={item.label}>
             <Link
               href={`/${locale}${item.href}`}
-              className={`font-semibold px-2 ${
+              className={`font-semibold px-4 hover:underline underline-offset-2 tracking-widest uppercase ${
                 idx !== 0 && "border-l-2 border-l-neutral-600"
               }`}
             >
