@@ -78,6 +78,8 @@ export default async function TripPage({
           prose-h1:text-3xl 
           prose-h2:text-2xl
           prose-p:leading-relaxed
+          prose-img:rounded-md
+          prose-img:shadow-
           max-w-none
         "
         dangerouslySetInnerHTML={{ __html: post.html }}

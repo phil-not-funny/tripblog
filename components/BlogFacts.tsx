@@ -1,5 +1,4 @@
 import { getDictionary } from "@/app/[lang]/dictionaries";
-import { TripPost } from "@/types/content";
 import { Locale } from "@/types/internationalization";
 import { DynamicIcon, IconName } from "lucide-react/dynamic";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
@@ -13,8 +12,6 @@ export default async function BlogFacts({
   lang: Locale;
   title: string;
 }) {
-  const dict = await getDictionary(lang);
-
   return (
     <section className="p-6 bg-white/60 backdrop-blur rounded-2xl shadow-sm space-y-2">
       <h2 className="text-lg font-semibold text-neutral-800">{title}</h2>
