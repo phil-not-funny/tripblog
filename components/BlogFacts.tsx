@@ -14,7 +14,7 @@ export default async function BlogFacts({
 }) {
   return (
     <section className="p-6 bg-white/60 backdrop-blur rounded-2xl shadow-sm space-y-2">
-      <h2 className="text-lg font-semibold text-neutral-800">{title}</h2>
+      <h1 className="text-lg font-semibold text-neutral-800">{title}</h1>
 
       <ul className="grid sm:grid-cols-2 gap-y-1 text-neutral-700">
         {facts.map((fact, index) => (

@@ -85,7 +85,6 @@ export async function getAllPosts(
   const posts = await Promise.all(
     slugs.map((s) => getPostBySlug(type, s, locale))
   );
-  console.log("❓ posts", posts);
   return posts.sort((a, b) => {
     if (
       type === BlogPostType.TRIP &&

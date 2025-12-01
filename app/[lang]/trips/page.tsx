@@ -1,12 +1,6 @@
-import {
-  asHumanReadable,
-  asSingleHumanReadable,
-  getPostBySlug,
-  getPostSlugs,
-} from "@/lib/posts";
+import BlogList from "@/components/BlogList";
 import { BlogPostType } from "@/types/content";
 import { Locale } from "@/types/internationalization";
-import Link from "next/link";
 
 export default async function TripsPage({
   params,
@@ -14,27 +8,5 @@ export default async function TripsPage({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
-  const posts = getPostSlugs(BlogPostType.TRIP, lang as Locale);
-  return (
-    <div className="min-h-screen w-full flex flex-col items-center">
-      <h1 className="text-2xl font-bold block">TRIPS</h1>
-      <p className="w-full block text-center">Look at these trips:</p>
-      <ul>
-        {posts.map((slug) => (
-          <li key={slug} className="text-center">
-            <Link
-              className="hover:underline"
-              href={`/${lang}/trips/${slug.replace(/.md$/, "")}`}
-            >
-              {getPostBySlug(BlogPostType.TRIP, slug, lang as Locale).then(
-                (post) => post.frontmatter.title
-              )}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+  return <BlogList type={BlogPostType.TRIP} locale={lang as Locale} />;
 }
-
-export const dynamic = "force-static";

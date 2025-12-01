@@ -75,6 +75,9 @@
   "components": {
     "Navbar": {
       "selectLanguage": "Select Language"
+    },
+    "BlogList": {
+      "subtitle": "Look at the ${type} I've done!"
     }
   },
   "locales": {
