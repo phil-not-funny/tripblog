@@ -78,6 +78,13 @@
     },
     "BlogList": {
       "subtitle": "Schau dir meine ${type} an!"
+    },
+    "PageSwitcher": {
+      "gallery": "Galerie",
+      "blog": "Blog"
+    },
+    "Gallery": {
+      "noImages": "Keine Bilder für diesen Beitrag verfügbar."
     }
   },
   "locales": {

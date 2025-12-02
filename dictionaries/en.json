@@ -78,6 +78,13 @@
     },
     "BlogList": {
       "subtitle": "Look at the ${type} I've done!"
+    },
+    "PageSwitcher": {
+      "gallery": "Gallery",
+      "blog": "Blog"
+    },
+    "Gallery": {
+      "noImages": "No images available for this post."
     }
   },
   "locales": {

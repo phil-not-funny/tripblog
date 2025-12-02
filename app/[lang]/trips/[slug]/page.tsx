@@ -5,6 +5,8 @@ import { Locale } from "@/types/internationalization";
 import { getDictionary } from "../../dictionaries";
 import BlogFacts, { BlogFact } from "@/components/BlogFacts";
 import { formatDateByLocale } from "@/lib/date";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Gallery from "@/components/Gallery";
 
 export async function generateStaticParams() {
   return Object.values(Locale).flatMap((locale) =>
@@ -60,30 +62,46 @@ export default async function TripPage({
         </p>
       </header>
 
-      <BlogFacts
-        lang={lang as Locale}
-        title={dict.trips.dynamic.infoBlock}
-        facts={facts}
-      />
+      <Tabs defaultValue="blog" className="w-full flex flex-col space-y-8">
+        <TabsList className="bg-neutral-100 self-center">
+          <TabsTrigger value="blog" className="px-8 py-4 text-lg">
+            {dict.components.PageSwitcher.blog.toUpperCase()}
+          </TabsTrigger>
+          <TabsTrigger value="gallery" className="px-8 py-4 text-lg">
+            {dict.components.PageSwitcher.gallery.toUpperCase()}
+          </TabsTrigger>
+        </TabsList>
+        <BlogFacts
+          lang={lang as Locale}
+          title={dict.trips.dynamic.infoBlock}
+          facts={facts}
+        />
 
-      {fm.introLat && fm.introLng && (
-        <SimpleMap lat={fm.introLat} lng={fm.introLng} zoom={12} />
-      )}
-      {/* Markdown content */}
-      <div
-        className="
-          prose prose-neutral 
-          prose-headings:font-semibold 
-          prose-headings:text-neutral-900
-          prose-h1:text-3xl 
-          prose-h2:text-2xl
-          prose-p:leading-relaxed
-          prose-img:rounded-md
-          prose-img:shadow-
-          max-w-none
-        "
-        dangerouslySetInnerHTML={{ __html: post.html }}
-      />
+        {fm.introLat && fm.introLng && (
+          <SimpleMap lat={fm.introLat} lng={fm.introLng} zoom={12} />
+        )}
+
+        <TabsContent value="blog" className="w-full">
+          <div
+            className="
+            prose prose-neutral 
+            prose-headings:font-semibold 
+            prose-headings:text-neutral-900
+            prose-h1:text-3xl 
+            prose-h2:text-2xl
+            prose-p:leading-relaxed
+            prose-img:rounded-md
+            prose-img:shadow-
+            max-w-none
+            "
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
+        </TabsContent>
+
+        <TabsContent value="gallery" className="w-full">
+          <Gallery lang={lang} blog={post} />
+        </TabsContent>
+      </Tabs>
     </article>
   );
 }

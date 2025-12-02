@@ -97,3 +97,25 @@ export async function getAllPosts(
     return 0;
   });
 }
+
+export function getImagePaths(blog: BlogPost): string[] {
+  const contentDir = path.join(
+    "public",
+    "content",
+    blog.type.toLocaleLowerCase(),
+    blog.slug
+  );
+
+  if (fs.existsSync(contentDir)) {
+    const files = fs.readdirSync(contentDir);
+    const imageFiles = files.filter((file) =>
+      [".jpg", ".jpeg", ".png", ".gif", ".webp"].includes(
+        path.extname(file).toLowerCase()
+      )
+    );
+    return imageFiles.map((file) =>
+      path.join("/content", blog.type.toLocaleLowerCase(), blog.slug, file)
+    );
+  }
+  return [];
+}
