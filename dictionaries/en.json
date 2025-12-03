@@ -84,7 +84,8 @@
       "blog": "Blog"
     },
     "Gallery": {
-      "noImages": "No images available for this post."
+      "noImages": "No images available for this post.",
+      "modalTitle": "Image Gallery Modal"
     }
   },
   "locales": {

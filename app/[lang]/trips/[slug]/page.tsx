@@ -1,5 +1,5 @@
 import SimpleMap from "@/components/Map";
-import { getPostBySlug, getPostSlugs } from "@/lib/posts";
+import { getImagePaths, getPostBySlug, getPostSlugs } from "@/lib/posts";
 import { BlogPostType, TripPost } from "@/types/content";
 import { Locale } from "@/types/internationalization";
 import { getDictionary } from "../../dictionaries";
@@ -63,7 +63,7 @@ export default async function TripPage({
       </header>
 
       <Tabs defaultValue="blog" className="w-full flex flex-col space-y-8">
-        <TabsList className="bg-neutral-100 self-center">
+        <TabsList className=" self-center">
           <TabsTrigger value="blog" className="px-8 py-4 text-lg">
             {dict.components.PageSwitcher.blog.toUpperCase()}
           </TabsTrigger>
@@ -99,7 +99,7 @@ export default async function TripPage({
         </TabsContent>
 
         <TabsContent value="gallery" className="w-full">
-          <Gallery lang={lang} blog={post} />
+          <Gallery imagePaths={getImagePaths(post)} />
         </TabsContent>
       </Tabs>
     </article>

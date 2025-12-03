@@ -17,7 +17,7 @@ export default function SimpleMap({
   children?: React.ReactNode;
 }) {
   return (
-    <div className="w-full rounded-2xl overflow-hidden shadow">
+    <div className="w-full rounded-2xl overflow-hidden  z-10">
       <MapContainer
         center={[lat, lng]}
         zoom={zoom}

@@ -84,7 +84,8 @@
       "blog": "Blog"
     },
     "Gallery": {
-      "noImages": "Keine Bilder für diesen Beitrag verfügbar."
+      "noImages": "Keine Bilder für diesen Beitrag verfügbar.",
+      "modalTitle": "Bildergalerie Modal"
     }
   },
   "locales": {
