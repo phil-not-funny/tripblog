@@ -7,6 +7,7 @@ import BlogFacts, { BlogFact } from "@/components/BlogFacts";
 import { formatDateByLocale } from "@/lib/date";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Gallery from "@/components/Gallery";
+import BlogMdContent from "@/components/BlogMdContent";
 
 export async function generateStaticParams() {
   return Object.values(Locale).flatMap((locale) =>
@@ -82,20 +83,7 @@ export default async function TripPage({
         )}
 
         <TabsContent value="blog" className="w-full">
-          <div
-            className="
-            prose prose-neutral 
-            prose-headings:font-semibold 
-            prose-headings:text-neutral-900
-            prose-h1:text-3xl 
-            prose-h2:text-2xl
-            prose-p:leading-relaxed
-            prose-img:rounded-md
-            prose-img:shadow-
-            max-w-none
-            "
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
+          <BlogMdContent post={post} />
         </TabsContent>
 
         <TabsContent value="gallery" className="w-full">

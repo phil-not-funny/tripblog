@@ -6,6 +6,7 @@ import { getDictionary } from "../../dictionaries";
 import { ArrowUpRight, LandPlot, MapPin, TypeIcon } from "lucide-react";
 import BlogFacts, { BlogFact } from "@/components/BlogFacts";
 import { formatDateByLocale } from "@/lib/date";
+import BlogMdContent from "@/components/BlogMdContent";
 
 export async function generateStaticParams() {
   return Object.values(Locale).flatMap((locale) =>
@@ -140,19 +141,7 @@ export default async function HikesPage({
       {fm.introLat && fm.introLng && (
         <SimpleMap lat={fm.introLat} lng={fm.introLng} zoom={12} />
       )}
-      {/* Content */}
-      <div
-        className="
-          prose prose-neutral 
-          prose-headings:font-semibold 
-          prose-headings:text-neutral-900
-          prose-h1:text-3xl 
-          prose-h2:text-2xl
-          prose-p:leading-relaxed
-          max-w-none
-        "
-        dangerouslySetInnerHTML={{ __html: post.html }}
-      />
+      <BlogMdContent post={post} />
     </article>
   );
 }
