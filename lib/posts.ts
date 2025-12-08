@@ -8,7 +8,9 @@ import {
   BlogPostType,
   HikeFrontmatter,
   isHikeFrontmatter,
+  isHikePosts,
   isTripFrontmatter,
+  isTripPosts,
   TripFrontmatter,
 } from "@/types/content";
 import { Locale } from "@/types/internationalization";
@@ -85,17 +87,7 @@ export async function getAllPosts(
   const posts = await Promise.all(
     slugs.map((s) => getPostBySlug(type, s, locale))
   );
-  return posts.sort((a, b) => {
-    if (
-      type === BlogPostType.TRIP &&
-      isTripFrontmatter(a.frontmatter) &&
-      isTripFrontmatter(b.frontmatter)
-    ) {
-      if (a.frontmatter.dateFrom === b.frontmatter.dateFrom) return 0;
-      return a.frontmatter.dateFrom > b.frontmatter.dateFrom ? -1 : 1;
-    }
-    return 0;
-  });
+  return sortPosts(posts);
 }
 
 export function getImagePaths(blog: BlogPost): string[] {
@@ -118,4 +110,42 @@ export function getImagePaths(blog: BlogPost): string[] {
     );
   }
   return [];
+}
+
+export function sortPosts(blogs: BlogPost[]): BlogPost[] {
+  // --- TRIPS ---
+  if (isTripPosts(blogs)) {
+    return blogs.sort((a, b) => {
+      const aDate = Date.parse(a.frontmatter.dateFrom) ?? 0;
+      const bDate = Date.parse(b.frontmatter.dateFrom) ?? 0;
+
+      // 1) date DESC
+      if (aDate !== bDate) return bDate - aDate;
+
+      const aWeight = a.frontmatter.internalWeight ?? 0;
+      const bWeight = b.frontmatter.internalWeight ?? 0;
+
+      // 2) weight DESC
+      if (aWeight !== bWeight) return bWeight - aWeight;
+
+      // 3) title ASC
+      return a.frontmatter.title.localeCompare(b.frontmatter.title);
+    });
+  }
+
+  // --- HIKES ---
+  if (isHikePosts(blogs)) {
+    return blogs.sort((a, b) => {
+      const aWeight = a.frontmatter.internalWeight ?? 0;
+      const bWeight = b.frontmatter.internalWeight ?? 0;
+
+      // 1) weight DESC
+      if (aWeight !== bWeight) return bWeight - aWeight;
+
+      // 2) title ASC
+      return a.frontmatter.title.localeCompare(b.frontmatter.title);
+    });
+  }
+
+  throw new Error("❗Unknown blog post type for sorting");
 }

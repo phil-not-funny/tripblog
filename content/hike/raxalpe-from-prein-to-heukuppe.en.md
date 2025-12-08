@@ -14,10 +14,10 @@ walkingMinutes: 105
 totalMinutes: 180
 difficulty: "experienced"
 type: "circular"
+season: "summer"
 introLat: 47.689011
 introLng: 15.689504
-relatedLinks:
-  - https://www.instagram.com/p/DRRTcShiOVDC-hL_T911QJQyAeYWQ6_Ddlr0rA0/?img_index=1
+internalWeight: 20
 ---
 
 # Raxalpe

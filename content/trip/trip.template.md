@@ -4,11 +4,11 @@ shortDescription:
 dateFrom:
 dateTo:
 country:
-region:
+region: #optional
 name:
 type: "city"
 introLat: 45
 introLng: -10
-relatedLinks:
-  - google.com
+# 1 -> 100
+internalWeight:
 ---

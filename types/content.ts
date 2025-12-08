@@ -10,7 +10,7 @@ export type FrontmatterBase = {
   shortDescription?: string;
   introLat?: number;
   introLng?: number;
-  relatedLinks?: string[];
+  internalWeight?: number;
 };
 
 export function isFrontmatterBase(obj: any): obj is FrontmatterBase {
@@ -22,7 +22,8 @@ export function isFrontmatterBase(obj: any): obj is FrontmatterBase {
       (Array.isArray(obj.relatedLinks) &&
         obj.relatedLinks.every((link: any) => typeof link === "string"))) &&
     (obj.shortDescription === undefined ||
-      typeof obj.shortDescription === "string")
+      typeof obj.shortDescription === "string") &&
+    (obj.internalWeight === undefined || typeof obj.internalWeight === "number")
   );
 }
 
@@ -67,6 +68,13 @@ export enum HikeDifficulty {
   EXPERT = "expert",
 }
 
+export enum HikeSeason {
+  SPRING = "spring",
+  SUMMER = "summer",
+  AUTUMN = "autumn",
+  WINTER = "winter",
+}
+
 export type HikeFrontmatter = FrontmatterBase & {
   destination: string;
   lastDone?: string;
@@ -82,6 +90,7 @@ export type HikeFrontmatter = FrontmatterBase & {
   totalMinutes?: number;
   difficulty: HikeDifficulty;
   type: HikeType;
+  season?: HikeSeason;
 };
 
 export function isHikeFrontmatter(obj: any): obj is HikeFrontmatter {
@@ -121,3 +130,10 @@ export type TripPost = {
 } & PostBase;
 
 export type BlogPost = HikePost | TripPost;
+
+export function isTripPosts(blogs: BlogPost[]): blogs is TripPost[] {
+  return blogs.every((blog) => blog.type === BlogPostType.TRIP);
+}
+export function isHikePosts(blogs: BlogPost[]): blogs is HikePost[] {
+  return blogs.every((blog) => blog.type === BlogPostType.HIKE);
+}
