@@ -62,7 +62,8 @@
         "relatedLinks": "Related Links"
       },
       "map": "Map",
-      "noData": "No Data"
+      "noData": "No Data",
+      "tableOfContents": "Table of Contents"
     },
     "yes": "Yes",
     "no": "No",

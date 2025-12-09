@@ -45,7 +45,7 @@ export default async function TripPage({
     {
       icon: "map-pinned",
       label: dict.trips.dynamic.labels.location,
-      value: `${fm.name}, ${fm.region && fm.region + ", "}${fm.country}`,
+      value: `${fm.name}, ${fm.region ? fm.region + ", " : ""}${fm.country}`,
     },
   ];
 

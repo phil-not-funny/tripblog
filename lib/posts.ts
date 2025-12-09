@@ -2,7 +2,12 @@ import path from "path";
 import fs from "fs";
 import matter from "gray-matter";
 import { remark } from "remark";
-import html from "remark-html";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import rehypeStringify from "rehype-stringify";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolink from "rehype-autolink-headings";
+import rehypeToc from "rehype-toc";
 import {
   type BlogPost,
   BlogPostType,
@@ -14,6 +19,7 @@ import {
   TripFrontmatter,
 } from "@/types/content";
 import { Locale } from "@/types/internationalization";
+import { getDictionary } from "@/app/[lang]/dictionaries";
 
 const contentDir = path.join(process.cwd(), "content");
 
@@ -47,8 +53,11 @@ export function asSingleHumanReadable(slug: string): string {
 export async function getPostBySlug(
   type: BlogPostType,
   slug: string,
-  locale: Locale
+  locale: Locale,
+  withToc: boolean = true
 ): Promise<BlogPost> {
+  const dict = await getDictionary(locale);
+
   const fullPath = path.join(contentDir, type, `${slug}.${locale}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
@@ -57,7 +66,59 @@ export async function getPostBySlug(
     throw new Error(`Invalid frontmatter in post: ${slug}`);
   }
 
-  const processed = await remark().use(html).process(content);
+  const processed = await remark()
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(rehypeSlug) // gives each heading an ID
+    .use(rehypeAutolink, { behavior: "wrap" })
+    .use(withToc ? rehypeToc : () => (tree) => tree, {
+      headings: ["h1", "h2", "h3"],
+      customizeTOC(toc) {
+        return {
+          type: "element",
+          tagName: "div",
+          properties: {
+            className:
+              "not-prose p-6 bg-white/60 backdrop-blur rounded-2xl shadow-sm space-y-2 ol-",
+          },
+          children: [
+            {
+              type: "element",
+              tagName: "h1",
+              properties: {
+                className: "text-lg font-semibold text-neutral-800",
+              },
+              children: [
+                { type: "text", value: dict.global.dynamic.tableOfContents },
+              ],
+            },
+            toc,
+          ],
+        };
+      },
+      customizeTOCItem(tocItem, _) {
+        return {
+          ...tocItem,
+          properties: {
+            className: "ml-4",
+          },
+          children: tocItem.children.map((c) =>
+            c.type === "element" && (c as any).tagName === "a"
+              ? {
+                  ...c,
+                  properties: {
+                    ...(c as any).properties,
+                    className:
+                      "before:content-['↪_'] hover:underline hover:cursor-pointer",
+                  },
+                }
+              : c
+          ),
+        };
+      },
+    })
+    .use(rehypeStringify)
+    .process(content);
   const contentHtml = processed.toString();
 
   if (type === BlogPostType.TRIP) {

@@ -17,19 +17,16 @@ Zusammen mit einem Freund, der trotz fehlendem Ticket mitfuhr, stieg ich um 14:3
 
 ---
 
-# Ablauf
+# 1 Ablauf
 
-## Freitag
+## 1.1 Freitag
 
-### Ankunft
+### 1.1.1 Ankunft
 
 Nach einer vierstündigen, ermüdenden Zugfahrt waren wir endlich am Hauptbahnhof angekommen und bereits froh, dort bekannte Namen wie _BILLA_ oder _Intersport_ zu sehen. Viel vom Bahnhof sahen wir jedoch nicht, da wir aufgrund von Zeitdruck direkt in die U-Bahn stiegen. Der Grund dafür war unser immer näher rückender Check-in: Bei einer Fahrtzeit von 15 Minuten mussten wir bereits fünf Minuten aufholen, um um 18:50 Uhr pünktlich zu sein. Im Endeffekt ging dieser Plan jedoch nicht auf. Wir trafen mit einer Verspätung von sechs Minuten um 19:06 Uhr auf die anderen drei Jungs, die bereits seit 14:30 Uhr in Prag waren.
 
-### Erster Abend
+### 1.1.2 Erster Abend
 
 Nach dem Check-in und den ersten Eindrücken vom Hostel ging es endlich ohne Gepäck weiter Richtung Wirtshaus. Das erste Wirtshaus, das uns anlächelte, war das _„Pub & Restaurant Jamrtál”_. Nicht nur die Lage war ausgezeichnet (50 m vom Hostel entfernt), sondern viel wichtiger: Das Bier war billig. Gerade einmal 60 CZK (2,50 &euro;) hat uns ein Krügel _Pilsner Urquell_ gekostet. Ein Preis, der in tschechischen Wirtshäusern anscheinend vollkommen normal ist. Zum Essen bestellte ich Schweinsmedaillons mit Bratkartoffeln. Fun Fact: Wie sich herausgestellt hat, sprach die Kellnerin/Besitzerin ebenfalls Deutsch und hat sogar Verwandte in Österreich. Das wird nicht das letzte Mal sein, dass wir bei ihr vorbeischauen.
-
-![Bestellung im Pub & Restaurant Jamrtál](/content/trip/prague-2025/Snapchat-1090558118.jpg)
-^ _Bestellung im Pub & Restaurant Jamrtál_
 
 Nach dem ersten Essen ging es in einen bekannten tschechischen Club: _DupleX_. Obwohl die Lage mit den Öffis einfach zu erreichen war, entschieden wir uns, zu Fuß zu gehen, was uns insgesamt eine halbe Stunde mehr kostete. Meine ersten Eindrücke der – zugegebenermaßen sehr limitierten Auswahl an – Altbauten haben mich bereits aus den Socken gehauen, wo jedoch nicht jeder zugestimmt hat.

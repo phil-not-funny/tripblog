@@ -4,7 +4,7 @@ export default function BlogMdContent({ post }: { post: BlogPost }) {
   return (
     <div
       className="
-            prose prose-neutral 
+            prose prose-neutral
 
             prose-hr:my-4
             prose-hr:border-neutral-400
@@ -12,6 +12,8 @@ export default function BlogMdContent({ post }: { post: BlogPost }) {
             prose-headings:text-neutral-900
             prose-headings:font-semibold 
             prose-headings:pb-4
+            prose-headings:prose-a:no-underline
+            prose-headings:prose-a:hover:after:content-['_↗']
 
             prose-h1:mt-6
             prose-h1:uppercase
@@ -29,7 +31,6 @@ export default function BlogMdContent({ post }: { post: BlogPost }) {
             prose-p:leading-relaxed
 
             prose-img:rounded-md
-            prose-img:shadow-
             
             max-w-none
             "

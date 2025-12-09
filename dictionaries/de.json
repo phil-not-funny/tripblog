@@ -62,7 +62,8 @@
         "relatedLinks": "Verwandte Links"
       },
       "map": "Karte",
-      "noData": "Keine Daten"
+      "noData": "Keine Daten",
+      "tableOfContents": "Inhaltsverzeichnis"
     },
     "yes": "Ja",
     "no": "Nein",
