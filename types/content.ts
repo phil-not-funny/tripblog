@@ -11,6 +11,7 @@ export type FrontmatterBase = {
   introLat?: number;
   introLng?: number;
   internalWeight?: number;
+  disableToc?: boolean;
 };
 
 export function isFrontmatterBase(obj: any): obj is FrontmatterBase {
@@ -23,7 +24,9 @@ export function isFrontmatterBase(obj: any): obj is FrontmatterBase {
         obj.relatedLinks.every((link: any) => typeof link === "string"))) &&
     (obj.shortDescription === undefined ||
       typeof obj.shortDescription === "string") &&
-    (obj.internalWeight === undefined || typeof obj.internalWeight === "number")
+    (obj.internalWeight === undefined ||
+      typeof obj.internalWeight === "number") &&
+    (obj.disableToc === undefined || typeof obj.disableToc === "boolean")
   );
 }
 

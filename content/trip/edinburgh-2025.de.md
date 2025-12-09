@@ -10,6 +10,7 @@ type: "city"
 introLat: 55.9533
 introLng: -3.1883
 internalWeight: 50
+disableToc: true
 ---
 
 # Tag 1

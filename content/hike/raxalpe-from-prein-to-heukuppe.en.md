@@ -18,6 +18,7 @@ season: "summer"
 introLat: 47.689011
 introLng: 15.689504
 internalWeight: 20
+disableToc: true
 ---
 
 # Raxalpe

@@ -53,8 +53,7 @@ export function asSingleHumanReadable(slug: string): string {
 export async function getPostBySlug(
   type: BlogPostType,
   slug: string,
-  locale: Locale,
-  withToc: boolean = true
+  locale: Locale
 ): Promise<BlogPost> {
   const dict = await getDictionary(locale);
 
@@ -71,13 +70,14 @@ export async function getPostBySlug(
     .use(remarkRehype)
     .use(rehypeSlug) // gives each heading an ID
     .use(rehypeAutolink, { behavior: "wrap" })
-    .use(withToc ? rehypeToc : () => (tree) => tree, {
+    .use(data.disableToc ? () => (tree) => tree : rehypeToc, {
       headings: ["h1", "h2", "h3"],
       customizeTOC(toc) {
         return {
           type: "element",
           tagName: "div",
           properties: {
+            id: "toc",
             className:
               "not-prose p-6 bg-white/60 backdrop-blur rounded-2xl shadow-sm space-y-2 ol-",
           },
@@ -96,7 +96,7 @@ export async function getPostBySlug(
           ],
         };
       },
-      customizeTOCItem(tocItem, _) {
+      customizeTOCItem(tocItem) {
         return {
           ...tocItem,
           properties: {
