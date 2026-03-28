@@ -93,5 +93,9 @@
   "locales": {
     "en": "English",
     "de": "German (Deutsch)"
+  },
+  "showcase": {
+    "title": "Showcase Map",
+    "description": "Writing blogs takes time. That's why my showcase map is here to help! This map contains a marker for all significant locations I've ever been to. Enjoy"
   }
 }

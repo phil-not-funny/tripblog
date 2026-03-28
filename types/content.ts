@@ -147,5 +147,6 @@ export type ShowcaseMapLocation = {
   lng: number;
   name: string;
   nameExtension?: string;
+  important?: boolean;
   extra?: string;
 };

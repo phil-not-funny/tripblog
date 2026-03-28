@@ -3,7 +3,8 @@
     "lat": 48.2083,
     "lng": 16.3731,
     "name": "Vienna",
-    "nameExtension": "Vienna, Austria"
+    "nameExtension": "Vienna, Austria",
+    "important": true
   },
   {
     "lat": 47.8095,
@@ -39,7 +40,8 @@
     "lat": 52.3676,
     "lng": 4.9041,
     "name": "Amsterdam",
-    "nameExtension": "North Holland, Netherlands"
+    "nameExtension": "North Holland, Netherlands",
+    "important": true
   },
   {
     "lat": 52.0705,
@@ -57,7 +59,8 @@
     "lat": 48.8566,
     "lng": 2.3522,
     "name": "Paris",
-    "nameExtension": "Île-de-France, France"
+    "nameExtension": "Île-de-France, France",
+    "important": true
   },
   {
     "lat": 41.3851,
@@ -69,7 +72,8 @@
     "lat": 38.7169,
     "lng": -9.1399,
     "name": "Lisbon",
-    "nameExtension": "Lisbon, Portugal"
+    "nameExtension": "Lisbon, Portugal",
+    "important": true
   },
   {
     "lat": 41.1579,
@@ -117,43 +121,50 @@
     "lat": 42.6977,
     "lng": 23.3219,
     "name": "Sofia",
-    "nameExtension": "Sofia, Bulgaria"
+    "nameExtension": "Sofia, Bulgaria",
+    "important": true
   },
   {
     "lat": 47.4979,
     "lng": 19.0402,
     "name": "Budapest",
-    "nameExtension": "Budapest, Hungary"
+    "nameExtension": "Budapest, Hungary",
+    "important": true
   },
   {
     "lat": 50.0755,
     "lng": 14.4378,
     "name": "Prague",
-    "nameExtension": "Bohemia, Czech Republic"
+    "nameExtension": "Bohemia, Czech Republic",
+    "important": true
   },
   {
     "lat": 37.9755,
     "lng": 23.7348,
     "name": "Athens",
-    "nameExtension": "Attica, Greece"
+    "nameExtension": "Attica, Greece",
+    "important": true
   },
   {
     "lat": 51.5074,
     "lng": -0.1278,
     "name": "London",
-    "nameExtension": "England, UK"
+    "nameExtension": "England, UK",
+    "important": true
   },
   {
     "lat": 55.9533,
     "lng": -3.1883,
     "name": "Edinburgh",
-    "nameExtension": "Scotland, UK"
+    "nameExtension": "Scotland, UK",
+    "important": true
   },
   {
     "lat": 53.3498,
     "lng": -6.2603,
     "name": "Dublin",
-    "nameExtension": "Leinster, Ireland"
+    "nameExtension": "Leinster, Ireland",
+    "important": true
   },
   {
     "lat": 53.2707,
@@ -165,7 +176,8 @@
     "lat": 54.5973,
     "lng": -5.9301,
     "name": "Belfast",
-    "nameExtension": "Northern Ireland, UK"
+    "nameExtension": "Northern Ireland, UK",
+    "important": true
   },
   {
     "lat": 43.7696,
@@ -208,5 +220,48 @@
     "lng": 16.5254,
     "name": "Eisenstadt",
     "nameExtension": "Burgenland, Austria"
+  },
+  {
+    "lat": 48.3069,
+    "lng": 14.2858,
+    "name": "Linz",
+    "nameExtension": "Upper Austria, Austria"
+  },
+  {
+    "lat": 45.6328,
+    "lng": 13.0647,
+    "name": "Bibione",
+    "nameExtension": "Veneto, Italy"
+  },
+  {
+    "lat": 48.1439,
+    "lng": 17.1098,
+    "name": "Bratislava",
+    "nameExtension": "Bratislava, Slovakia",
+    "important": true
+  },
+  {
+    "lat": 47.1296,
+    "lng": 10.2678,
+    "name": "St. Anton am Arlberg",
+    "nameExtension": "Tyrol, Austria"
+  },
+  {
+    "lat": 47.0072,
+    "lng": 12.5344,
+    "name": "Matrei in Osttirol",
+    "nameExtension": "Tyrol, Austria"
+  },
+  {
+    "lat": 47.3256,
+    "lng": 12.7981,
+    "name": "Zell am See",
+    "nameExtension": "Salzburg, Austria"
+  },
+  {
+    "lat": 47.3928,
+    "lng": 13.6897,
+    "name": "Schladming",
+    "nameExtension": "Styria, Austria"
   }
 ]

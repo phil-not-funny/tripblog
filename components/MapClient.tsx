@@ -18,6 +18,24 @@ L.Icon.Default.mergeOptions({
   shadowUrl: markerShadow as unknown as string,
 });
 
+import { divIcon } from "leaflet";
+
+function coloredMarker(color: string) {
+  return divIcon({
+    className: "",
+    html: `<div style="
+      width: 16px;
+      height: 16px;
+      background: ${color};
+      border: 2px solid white;
+      border-radius: 50%;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    "></div>`,
+    iconSize: [14, 14],
+    iconAnchor: [7, 7],
+  });
+}
+
 export default function SimpleMap({
   lat,
   lng,
@@ -66,6 +84,11 @@ export function ShowcaseMap({
           position={[location.lat, location.lng]}
           title={location.name}
           alt={location.name}
+          icon={
+            location.important
+              ? coloredMarker("#E33B17")
+              : coloredMarker("#1B99D1")
+          }
         >
           <Tooltip>
             <b>{location.name}</b>, {location.nameExtension} <br />
