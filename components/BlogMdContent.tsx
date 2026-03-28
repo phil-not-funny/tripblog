@@ -15,7 +15,7 @@ export default function BlogMdContent({ post }: { post: BlogPost }) {
             prose-headings:prose-a:no-underline
             prose-headings:prose-a:hover:after:content-['_↗']
 
-            prose-h1:mt-6
+            prose-h1:pt-6
             prose-h1:uppercase
             prose-h1:tracking-wider
             prose-h1:leading-0

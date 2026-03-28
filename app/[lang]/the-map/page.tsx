@@ -1,0 +1,27 @@
+import { Locale } from "@/types/internationalization";
+import { getDictionary } from "../dictionaries";
+import SimpleMap, { ShowcaseMap } from "@/components/Map";
+import { Marker } from "react-leaflet";
+import { getShowcaseMapLocations } from "@/lib/showcase";
+
+export default async function TheMapPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang as Locale);
+
+  const locations = await getShowcaseMapLocations();
+
+  return (
+    <article className="max-w-6xl mx-auto px-6 py-16 space-y-8">
+      <header>
+        <h1 className="text-4xl font-semibold tracking-tight text-neutral-900">
+          {dict.global.theMap}
+        </h1>
+      </header>
+      <ShowcaseMap locations={locations} />
+    </article>
+  );
+}

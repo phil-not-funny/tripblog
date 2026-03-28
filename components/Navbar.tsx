@@ -33,10 +33,11 @@ export default function Navbar({ locale }: { locale: string }) {
     { href: "/", label: "Home" },
     { href: "/trips", label: t("global.trips") },
     { href: "/hikes", label: t("global.hikes") },
+    { href: "/the-map", label: t("global.theMap") },
   ];
 
   const [selectedLocale, setSelectedLocale] = useState<Locale>(
-    (params?.lang as Locale) || Locale.EN
+    (params?.lang as Locale) || Locale.EN,
   );
 
   const handleLocaleChange = async (newLocale: Locale) => {

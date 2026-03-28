@@ -71,7 +71,8 @@
     "to": "to",
     "via": "via",
     "trips": "Trips",
-    "hikes": "Hikes"
+    "hikes": "Hikes",
+    "theMap": "The Map"
   },
   "components": {
     "Navbar": {

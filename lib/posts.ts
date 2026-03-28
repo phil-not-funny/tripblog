@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import path from "path";
 import fs from "fs";
 import matter from "gray-matter";
@@ -53,7 +54,7 @@ export function asSingleHumanReadable(slug: string): string {
 export async function getPostBySlug(
   type: BlogPostType,
   slug: string,
-  locale: Locale
+  locale: Locale,
 ): Promise<BlogPost> {
   const dict = await getDictionary(locale);
 
@@ -112,7 +113,7 @@ export async function getPostBySlug(
                       "before:content-['↪_'] hover:underline hover:cursor-pointer",
                   },
                 }
-              : c
+              : c,
           ),
         };
       },
@@ -142,11 +143,11 @@ export async function getPostBySlug(
 
 export async function getAllPosts(
   type: BlogPostType,
-  locale: Locale
+  locale: Locale,
 ): Promise<BlogPost[]> {
   const slugs = getPostSlugs(type, locale);
   const posts = await Promise.all(
-    slugs.map((s) => getPostBySlug(type, s, locale))
+    slugs.map((s) => getPostBySlug(type, s, locale)),
   );
   return sortPosts(posts);
 }
@@ -156,18 +157,18 @@ export function getImagePaths(blog: BlogPost): string[] {
     "public",
     "content",
     blog.type.toLocaleLowerCase(),
-    blog.slug
+    blog.slug,
   );
 
   if (fs.existsSync(contentDir)) {
     const files = fs.readdirSync(contentDir);
     const imageFiles = files.filter((file) =>
       [".jpg", ".jpeg", ".png", ".gif", ".webp"].includes(
-        path.extname(file).toLowerCase()
-      )
+        path.extname(file).toLowerCase(),
+      ),
     );
     return imageFiles.map((file) =>
-      path.join("/content", blog.type.toLocaleLowerCase(), blog.slug, file)
+      path.join("/content", blog.type.toLocaleLowerCase(), blog.slug, file),
     );
   }
   return [];

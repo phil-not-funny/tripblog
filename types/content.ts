@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Locale } from "./internationalization";
 
 export enum BlogPostType {
@@ -140,3 +141,11 @@ export function isTripPosts(blogs: BlogPost[]): blogs is TripPost[] {
 export function isHikePosts(blogs: BlogPost[]): blogs is HikePost[] {
   return blogs.every((blog) => blog.type === BlogPostType.HIKE);
 }
+
+export type ShowcaseMapLocation = {
+  lat: number;
+  lng: number;
+  name: string;
+  nameExtension?: string;
+  extra?: string;
+};

@@ -71,7 +71,8 @@
     "to": "bis",
     "via": "über",
     "trips": "Reisen",
-    "hikes": "Touren"
+    "hikes": "Touren",
+    "theMap": "Die Karte"
   },
   "components": {
     "Navbar": {
