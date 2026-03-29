@@ -4,12 +4,12 @@ export default function BlogMdContent({ post }: { post: BlogPost }) {
   return (
     <div
       className="
-            prose prose-neutral
+            prose dark:prose-invert prose-accent-foreground
 
             prose-hr:my-4
-            prose-hr:border-neutral-400
+            prose-hr:border-muted-foreground
 
-            prose-headings:text-neutral-900
+            prose-headings:text-foreground
             prose-headings:font-semibold 
             prose-headings:pb-4
             prose-headings:prose-a:no-underline

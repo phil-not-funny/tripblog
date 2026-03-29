@@ -88,6 +88,16 @@
     "Gallery": {
       "noImages": "Keine Bilder für diesen Beitrag verfügbar.",
       "modalTitle": "Bildergalerie Modal"
+    },
+    "Footer": {
+      "builtWith": "Erstellt mit ",
+      "allRightsReserved": "Alle Rechte vorbehalten."
+    },
+    "themeSwitcher": {
+      "toggle": "Farbschema wechseln"
+    },
+    "map": {
+      "loading": "Karte lädt"
     }
   },
   "locales": {

@@ -13,10 +13,10 @@ export default async function BlogFacts({
   title: string;
 }) {
   return (
-    <section className="p-6 bg-white/60 backdrop-blur rounded-2xl shadow-sm space-y-2">
-      <h1 className="text-lg font-semibold text-neutral-800">{title}</h1>
+    <section className="p-6 bg-card backdrop-blur rounded-2xl shadow-sm space-y-2">
+      <h1 className="text-lg font-semibold text-foreground">{title}</h1>
 
-      <ul className="grid sm:grid-cols-2 gap-y-1 text-neutral-700">
+      <ul className="grid sm:grid-cols-2 gap-y-1 text-card-foreground">
         {facts.map((fact, index) => (
           <BlogFact
             key={index}
@@ -54,13 +54,16 @@ export async function BlogFact({
   return (
     <li
       className={`flex flex-row gap-2 ${colspan && "col-span-2"} ${
-        borderAbove && "border-t pt-2 border-t-neutral-600"
+        borderAbove && "border-t pt-2 border-t-muted-foreground"
       }`}
     >
       <span className="font-medium">
         <Tooltip>
           <TooltipTrigger>
-            <DynamicIcon name={icon} className="size-5 block" />
+            <DynamicIcon
+              name={icon}
+              className="size-5 block text-card-foreground"
+            />
           </TooltipTrigger>
           <TooltipContent>{label}</TooltipContent>
         </Tooltip>

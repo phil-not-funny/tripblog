@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useState } from "react";
@@ -12,24 +13,16 @@ import { useTranslations } from "next-intl";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import useGallery from "@/hooks/useGallery";
 import { Spinner } from "./ui/spinner";
+import Image from "next/image";
 
 export default function Gallery({ imagePaths }: { imagePaths: string[] }) {
   const t = useTranslations();
-  const {
-    sortedUrls,
-    sortedOrientations,
-    isOpen,
-    currentIndex,
-    current,
-    show,
-    close,
-    next,
-    prev,
-  } = useGallery(imagePaths);
+  const { sortedUrls, isOpen, currentIndex, current, show, close, next, prev } =
+    useGallery(imagePaths);
 
   return (
     <div className="flex flex-col items-center gap-4">
-      <h2 className="text-2xl font-semibold text-neutral-800">
+      <h2 className="text-2xl font-semibold text-foreground">
         {t("components.PageSwitcher.gallery").toUpperCase()}
       </h2>
 
@@ -38,21 +31,18 @@ export default function Gallery({ imagePaths }: { imagePaths: string[] }) {
         {sortedUrls.length === imagePaths.length ? (
           sortedUrls.map((src, i) => (
             <motion.div
-              key={i}
+              key={src}
               onClick={() => show(i)}
-              className={`overflow-hidden rounded-2xl shadow-md bg-neutral-100 cursor-pointer ${
-                // use sortedOrientations (aligned with sortedUrls) to determine span
-                sortedOrientations && sortedOrientations[i] === "landscape"
-                  ? "md:col-span-2"
-                  : "col-span-1"
-              }`}
+              className="relative aspect-4/3 overflow-hidden rounded-2xl shadow-md bg-card cursor-pointer"
               whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
             >
-              <img
+              <Image
                 src={src}
                 alt={`gallery-img-${i}`}
-                className="w-full h-full object-cover antialiased"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover"
               />
             </motion.div>
           ))
@@ -99,16 +89,23 @@ export default function Gallery({ imagePaths }: { imagePaths: string[] }) {
 
             {/* Image */}
             <AnimatePresence mode="wait">
-              <motion.img
+              <motion.div
                 key={currentIndex ?? "no-img"}
-                src={current ?? undefined}
-                alt={`expanded-img-${currentIndex ?? "-"}`}
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.2 }}
-                className={`w-full h-full object-contain`}
-              />
+                className="relative w-full h-full"
+              >
+                <Image
+                  src={current ?? ""}
+                  alt={`expanded-img-${currentIndex ?? "-"}`}
+                  fill
+                  sizes="90vw"
+                  className="object-contain"
+                  priority
+                />
+              </motion.div>
             </AnimatePresence>
 
             {/* Pagination Dots */}

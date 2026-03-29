@@ -26,7 +26,7 @@ export default async function BlogList({
   return (
     <div className="min-h-screen w-full flex flex-col items-center py-16 space-y-8">
       <header className="w-full flex flex-col items-center">
-        <h1 className="text-4xl uppercase tracking-wider font-semibold text-neutral-800">
+        <h1 className="text-4xl uppercase tracking-wider font-semibold text-foreground">
           {stringedType}
         </h1>
         <p className="w-full block text-center mt-3">
@@ -38,7 +38,7 @@ export default async function BlogList({
           <Fragment key={blog.slug}>
             <BlogListItem key={blog.slug} blog={blog} />
             {posts.length - 1 !== idx && (
-              <div className="my-2 border-b border-b-neutral-600 w-2xs!" />
+              <div className="my-2 border-b border-b-muted-foreground w-2xs!" />
             )}
           </Fragment>
         ))}
@@ -50,11 +50,11 @@ export default async function BlogList({
 export async function BlogListItem({ blog }: { blog: BlogPost }) {
   return (
     <Link href={await slugToUrl(blog)}>
-      <li className="bg-white p-6 shadow-md rounded-lg max-w-lg w-lg flex flex-col items-center text-wrap transition-all duration-75 hover:shadow-lg hover:scale-[1.02] active:scale-[1.08]">
+      <li className="bg-card p-6 shadow-md rounded-lg max-w-lg w-lg flex flex-col items-center text-wrap transition-all duration-75 hover:shadow-lg hover:scale-[1.02] active:scale-[1.08]">
         <span className="font-semibold tracking-wide text-lg">
           {blog.frontmatter.title}
         </span>
-        <p className="italic text-neutral-500 tracking-tight min-w-md text-sm text-center">
+        <p className="italic text-accent-foreground tracking-tight min-w-md text-sm text-center">
           {blog.frontmatter.shortDescription}
         </p>
       </li>

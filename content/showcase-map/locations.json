@@ -361,5 +361,23 @@
       "nameExtension": "Lower Austria, Austria",
       "extra": "My origin town"
     }
+  },
+  {
+    "lat": 40.0863,
+    "lng": 22.3581,
+    "de": { "name": "Olymp", "nameExtension": "Thessalien, Griechenland" },
+    "en": { "name": "Mount Olympus", "nameExtension": "Thessaly, Greece" }
+  },
+  {
+    "lat": 36.5439,
+    "lng": 32.0057,
+    "de": { "name": "Alanya", "nameExtension": "Antalya, Türkei" },
+    "en": { "name": "Alanya", "nameExtension": "Antalya, Turkey" }
+  },
+  {
+    "lat": 40.0833,
+    "lng": 9.5167,
+    "de": { "name": "Urzulei", "nameExtension": "Sardinien, Italien" },
+    "en": { "name": "Urzulei", "nameExtension": "Sardinia, Italy" }
   }
 ]

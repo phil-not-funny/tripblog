@@ -53,12 +53,12 @@ export default async function TripPage({
   return (
     <article className="max-w-3xl mx-auto px-6 py-16 space-y-8">
       <header>
-        <h1 className="text-4xl font-semibold tracking-tight text-neutral-900">
+        <h1 className="text-4xl font-semibold tracking-tight text-foreground">
           {fm.title}
         </h1>
-        <p className="text-neutral-700 my-3">{fm.shortDescription}</p>
-        <div className="max-w-1/3 border-b mb-3 border-b-neutral-600"></div>
-        <p className="text-sm text-neutral-600">
+        <p className="text-accent-foreground my-3">{fm.shortDescription}</p>
+        <div className="max-w-1/3 border-b mb-3 border-b-muted-foreground"></div>
+        <p className="text-sm text-accent-foreground">
           <b>{dict.trips.dynamic.labels.type}:</b>{" "}
           {dict.trips.dynamic.enums.type[fm.type]}
         </p>

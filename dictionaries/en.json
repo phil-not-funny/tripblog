@@ -88,6 +88,16 @@
     "Gallery": {
       "noImages": "No images available for this post.",
       "modalTitle": "Image Gallery Modal"
+    },
+    "Footer": {
+      "builtWith": "Built with ",
+      "allRightsReserved": "All rights reserved."
+    },
+    "themeSwitcher": {
+      "toggle": "Toggle Theme"
+    },
+    "map": {
+      "loading": "Loading Map"
     }
   },
   "locales": {

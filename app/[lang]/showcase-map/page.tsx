@@ -19,10 +19,12 @@ export default async function TheMapPage({
   return (
     <article className="max-w-6xl mx-auto px-6 py-16 space-y-8">
       <header>
-        <h1 className="text-4xl font-semibold tracking-tight text-neutral-900">
+        <h1 className="text-4xl font-semibold tracking-tight text-foreground">
           {dict.showcase.title}
         </h1>
-        <p className="text-neutral-700 my-3">{dict.showcase.description}</p>
+        <p className="text-accent-foreground my-3">
+          {dict.showcase.description}
+        </p>
       </header>
       <ShowcaseMap locations={locations} locale={lang as Locale} />
     </article>

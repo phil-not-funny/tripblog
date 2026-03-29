@@ -6,26 +6,11 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
 } from "./ui/navigation-menu";
-import { LanguagesIcon } from "lucide-react";
-import { Button } from "./ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuRadioItem,
-  DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
-import { Locale } from "@/types/internationalization";
-import { useState } from "react";
-import { DropdownMenuRadioGroup } from "./ui/dropdown-menu";
-import { useParams, usePathname, useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { useCookies } from "next-client-cookies";
+import ThemeSwitcher from "./ThemeSwitcher";
+import LocaleSwitcher from "./LocaleSwitcher";
 
 export default function Navbar({ locale }: { locale: string }) {
-  const router = useRouter();
-  const pathname = usePathname();
-  const params = useParams();
-  const cookies = useCookies();
   const t = useTranslations();
 
   const navItems = [
@@ -34,20 +19,6 @@ export default function Navbar({ locale }: { locale: string }) {
     { href: "/hikes", label: t("global.hikes") },
     { href: "/showcase-map", label: t("global.showcaseMap") },
   ];
-
-  const [selectedLocale, setSelectedLocale] = useState<Locale>(
-    (params?.lang as Locale) || Locale.EN,
-  );
-
-  const handleLocaleChange = async (newLocale: Locale) => {
-    setSelectedLocale(newLocale);
-    router.replace(`/${newLocale}${pathname.replace(/^\/[a-z]{2}/, "")}`);
-    cookies.set("locale", newLocale, {
-      path: "/",
-      secure: false,
-      sameSite: "lax",
-    });
-  };
 
   return (
     <NavigationMenu className="p-4 shadow-md min-w-full relative md:block flex flex-col gap-2 md:gap-0">
@@ -65,30 +36,10 @@ export default function Navbar({ locale }: { locale: string }) {
           </NavigationMenuItem>
         ))}
       </NavigationMenuList>
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button className="md:absolute right-2 top-2 p-4" variant={"ghost"}>
-            {t("components.Navbar.selectLanguage")}{" "}
-            <LanguagesIcon className="size-5" />
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent>
-          <DropdownMenuRadioGroup
-            value={selectedLocale}
-            onValueChange={(value) => handleLocaleChange(value as Locale)}
-          >
-            {Object.values(Locale).map((lang) => (
-              <DropdownMenuRadioItem
-                className="cursor-pointer"
-                value={lang}
-                key={lang}
-              >
-                {t(`locales.${lang}`)}
-              </DropdownMenuRadioItem>
-            ))}
-          </DropdownMenuRadioGroup>
-        </DropdownMenuContent>
-      </DropdownMenu>
+      <div className="md:absolute right-2 top-2 flex items-center gap-1">
+        <LocaleSwitcher />
+        <ThemeSwitcher />
+      </div>
     </NavigationMenu>
   );
 }

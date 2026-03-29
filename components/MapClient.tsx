@@ -55,14 +55,16 @@ export default function SimpleMap({
   children?: React.ReactNode;
   outerClassName?: string;
 }) {
+  const t = useTranslations();
   const [tilesLoaded, setTilesLoaded] = useState(false);
+
   return (
     <div
       className={`relative w-full rounded-2xl overflow-hidden z-10 ${outerClassName}`}
     >
       {!tilesLoaded && (
-        <div className="absolute inset-0 z-1000 flex items-center justify-center bg-neutral-100">
-          <span>Loading map...</span>
+        <div className="absolute inset-0 z-50 flex items-center justify-center bg-background/60 backdrop-blur-sm">
+          <span>{t("components.map.loading")}...</span>
         </div>
       )}
       <MapContainer
@@ -95,7 +97,7 @@ export function ShowcaseMap({
 
   return (
     <Fragment>
-      <SimpleMap lat={47.8002} lng={13.0435} zoom={5} height="500px">
+      <SimpleMap lat={47.8002} lng={13.0435} zoom={4} height="500px">
         {locations.map((location, index) => (
           <Marker
             key={index}

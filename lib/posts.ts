@@ -66,14 +66,14 @@ export async function getPostBySlug(
           properties: {
             id: "toc",
             className:
-              "not-prose p-6 bg-white/60 backdrop-blur rounded-2xl shadow-sm space-y-2 ol-",
+              "not-prose p-6 bg-card backdrop-blur rounded-2xl shadow-sm space-y-2 ol-",
           },
           children: [
             {
               type: "element",
               tagName: "h1",
               properties: {
-                className: "text-lg font-semibold text-neutral-800",
+                className: "text-lg font-semibold text-foreground",
               },
               children: [
                 { type: "text", value: dict.global.dynamic.tableOfContents },
@@ -96,7 +96,7 @@ export async function getPostBySlug(
                   properties: {
                     ...(c as any).properties,
                     className:
-                      "before:content-['↪_'] hover:underline hover:cursor-pointer",
+                      "before:content-['↪_'] hover:underline hover:cursor-pointer text-accent-foreground",
                   },
                 }
               : c,
@@ -154,7 +154,9 @@ export function getImagePaths(blog: BlogPost): string[] {
       ),
     );
     return imageFiles.map((file) =>
-      path.join("/content", blog.type.toLocaleLowerCase(), blog.slug, file),
+      path
+        .join("/content", blog.type.toLocaleLowerCase(), blog.slug, file)
+        .replaceAll("\\", "/"),
     );
   }
   return [];

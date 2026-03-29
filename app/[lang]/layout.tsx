@@ -3,9 +3,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./../globals.css";
 import "leaflet/dist/leaflet.css";
 import Navbar from "@/components/Navbar";
-import { NextIntlClientProvider } from "next-intl";
+import { Locale, NextIntlClientProvider } from "next-intl";
 import { CookiesProvider } from "next-client-cookies/server";
 import favicon from "@/public/favicon.ico";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,9 +47,10 @@ export default async function LocaleLayout({
         <NextIntlClientProvider locale={lang} messages={messages}>
           <CookiesProvider>
             <Navbar locale={lang} />
-            <main className="min-h-screen from-green-100 to-amber-100 bg-linear-to-b p-4">
+            <main className="min-h-screen from-green-100 to-amber-100 bg-linear-to-b dark:from-green-950 dark:to-stone-900 p-4">
               {children}
             </main>
+            <Footer locale={lang} />
           </CookiesProvider>
         </NextIntlClientProvider>
       </body>
