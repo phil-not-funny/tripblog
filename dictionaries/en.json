@@ -72,7 +72,7 @@
     "via": "via",
     "trips": "Trips",
     "hikes": "Hikes",
-    "theMap": "The Map"
+    "showcaseMap": "Showcase Map"
   },
   "components": {
     "Navbar": {
@@ -96,6 +96,9 @@
   },
   "showcase": {
     "title": "Showcase Map",
-    "description": "Writing blogs takes time. That's why my showcase map is here to help! This map contains a marker for all significant locations I've ever been to. Enjoy"
+    "description": "Writing blogs takes time. That's why my showcase map is here to help! This map contains a marker for all significant locations I've ever been to. Enjoy",
+    "hometownMarker": "Hometowns",
+    "importantMarker": "Capital Cities",
+    "otherMarker": "Other"
   }
 }

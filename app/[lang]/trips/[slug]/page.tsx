@@ -8,10 +8,11 @@ import { formatDateByLocale } from "@/lib/date";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Gallery from "@/components/Gallery";
 import BlogMdContent from "@/components/BlogMdContent";
+import { Metadata } from "next";
 
 export async function generateStaticParams() {
   return Object.values(Locale).flatMap((locale) =>
-    getPostSlugs(BlogPostType.TRIP, locale).map((slug) => ({ locale, slug }))
+    getPostSlugs(BlogPostType.TRIP, locale).map((slug) => ({ locale, slug })),
   );
 }
 
@@ -25,7 +26,7 @@ export default async function TripPage({
   const post = (await getPostBySlug(
     BlogPostType.TRIP,
     slug,
-    lang as Locale
+    lang as Locale,
   )) as TripPost;
 
   const fm = post.frontmatter;
@@ -95,3 +96,21 @@ export default async function TripPage({
 }
 
 export const dynamic = "force-static";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string; lang: string }>;
+}): Promise<Metadata> {
+  const { slug, lang } = await params;
+
+  const post = (await getPostBySlug(
+    BlogPostType.TRIP,
+    slug,
+    lang as Locale,
+  )) as TripPost;
+
+  return {
+    title: post.frontmatter.name,
+  };
+}

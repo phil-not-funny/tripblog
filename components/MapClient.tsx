@@ -1,6 +1,6 @@
 "use client";
 
-import { MapContainer, Marker, Popup, TileLayer, Tooltip } from "react-leaflet";
+import { MapContainer, Marker, TileLayer, Tooltip } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
@@ -19,8 +19,12 @@ L.Icon.Default.mergeOptions({
 });
 
 import { divIcon } from "leaflet";
+import { Locale } from "@/types/internationalization";
+import { Fragment } from "react/jsx-runtime";
+import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 
-function coloredMarker(color: string) {
+export function coloredMarker(color: string) {
   return divIcon({
     className: "",
     html: `<div style="
@@ -51,10 +55,16 @@ export default function SimpleMap({
   children?: React.ReactNode;
   outerClassName?: string;
 }) {
+  const [tilesLoaded, setTilesLoaded] = useState(false);
   return (
     <div
-      className={`w-full rounded-2xl overflow-hidden z-10 ${outerClassName}`}
+      className={`relative w-full rounded-2xl overflow-hidden z-10 ${outerClassName}`}
     >
+      {!tilesLoaded && (
+        <div className="absolute inset-0 z-1000 flex items-center justify-center bg-neutral-100">
+          <span>Loading map...</span>
+        </div>
+      )}
       <MapContainer
         center={[lat, lng]}
         zoom={zoom}
@@ -64,6 +74,9 @@ export default function SimpleMap({
         <TileLayer
           attribution='&copy; <a href="https://osm.org">OSM</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          eventHandlers={{
+            load: () => setTilesLoaded(true),
+          }}
         />
         {children}
       </MapContainer>
@@ -73,29 +86,72 @@ export default function SimpleMap({
 
 export function ShowcaseMap({
   locations,
+  locale,
 }: {
   locations: ShowcaseMapLocation[];
+  locale: Locale;
 }) {
+  const t = useTranslations();
+
   return (
-    <SimpleMap lat={47.8002} lng={13.0435} zoom={5} height="500px">
-      {locations.map((location, index) => (
-        <Marker
-          key={index}
-          position={[location.lat, location.lng]}
-          title={location.name}
-          alt={location.name}
-          icon={
-            location.important
-              ? coloredMarker("#E33B17")
-              : coloredMarker("#1B99D1")
-          }
-        >
-          <Tooltip>
-            <b>{location.name}</b>, {location.nameExtension} <br />
-            {location.extra}
-          </Tooltip>
-        </Marker>
-      ))}
-    </SimpleMap>
+    <Fragment>
+      <SimpleMap lat={47.8002} lng={13.0435} zoom={5} height="500px">
+        {locations.map((location, index) => (
+          <Marker
+            key={index}
+            position={[location.lat, location.lng]}
+            title={location[locale].name}
+            alt={location[locale].name}
+            icon={
+              location.color
+                ? coloredMarker(location.color)
+                : location.important
+                  ? coloredMarker("#E33B17")
+                  : coloredMarker("#1B99D1")
+            }
+          >
+            <Tooltip>
+              <b>{location[locale].name}</b>, {location[locale].nameExtension}
+              {location.timesVisited ? (
+                <b>{` (x${location.timesVisited})`}</b>
+              ) : (
+                ""
+              )}
+              <br />
+              <i>{location[locale].extra}</i>
+            </Tooltip>
+          </Marker>
+        ))}
+      </SimpleMap>
+      <div className="space-2 flex flex-col md:flex-row items-center md:w-full md:justify-around">
+        <div className="flex flex-row items-center">
+          <div
+            dangerouslySetInnerHTML={{
+              __html: coloredMarker("#1BD16A").createIcon().getHTML(),
+            }}
+            className="mr-4"
+          />
+          {t("showcase.hometownMarker")}
+        </div>
+        <div className="flex flex-row items-center">
+          <div
+            dangerouslySetInnerHTML={{
+              __html: coloredMarker("#E33B17").createIcon().getHTML(),
+            }}
+            className="mr-4"
+          />
+          {t("showcase.importantMarker")}
+        </div>
+        <div className="flex flex-row items-center">
+          <div
+            dangerouslySetInnerHTML={{
+              __html: coloredMarker("#1B99D1").createIcon().getHTML(),
+            }}
+            className="mr-4"
+          />
+          {t("showcase.otherMarker")}
+        </div>
+      </div>
+    </Fragment>
   );
 }

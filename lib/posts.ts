@@ -21,6 +21,7 @@ import {
 } from "@/types/content";
 import { Locale } from "@/types/internationalization";
 import { getDictionary } from "@/app/[lang]/dictionaries";
+import { Metadata } from "next";
 
 const contentDir = path.join(process.cwd(), "content");
 
@@ -34,21 +35,6 @@ export function getPostSlugs(type: BlogPostType, locale: Locale): string[] {
     .filter((name) => !name.includes("template"))
     .filter((name) => name.endsWith(`.${locale}.md`))
     .map((name) => name.replace(`.${locale}.md`, ""));
-}
-
-export function asHumanReadable(slugs: string[]): string[] {
-  return slugs.map((slug) => asSingleHumanReadable(slug));
-}
-
-export function asSingleHumanReadable(slug: string): string {
-  return (
-    slug.charAt(0).toUpperCase() +
-    slug
-      .slice(1)
-      .replace(/-/g, " ")
-      .replace(/\.md$/, "")
-      .replace(new RegExp(`\\.${Locale.EN}|\\.${Locale.DE}|$`), "")
-  );
 }
 
 export async function getPostBySlug(

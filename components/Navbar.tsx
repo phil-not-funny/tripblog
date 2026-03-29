@@ -11,7 +11,6 @@ import { Button } from "./ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
@@ -33,7 +32,7 @@ export default function Navbar({ locale }: { locale: string }) {
     { href: "/", label: "Home" },
     { href: "/trips", label: t("global.trips") },
     { href: "/hikes", label: t("global.hikes") },
-    { href: "/the-map", label: t("global.theMap") },
+    { href: "/showcase-map", label: t("global.showcaseMap") },
   ];
 
   const [selectedLocale, setSelectedLocale] = useState<Locale>(

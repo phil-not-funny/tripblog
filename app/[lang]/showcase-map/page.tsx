@@ -3,6 +3,8 @@ import { getDictionary } from "../dictionaries";
 import SimpleMap, { ShowcaseMap } from "@/components/Map";
 import { Marker } from "react-leaflet";
 import { getShowcaseMapLocations } from "@/lib/showcase";
+import { coloredMarker } from "@/components/MapClient";
+import { Metadata } from "next";
 
 export default async function TheMapPage({
   params,
@@ -22,7 +24,21 @@ export default async function TheMapPage({
         </h1>
         <p className="text-neutral-700 my-3">{dict.showcase.description}</p>
       </header>
-      <ShowcaseMap locations={locations} />
+      <ShowcaseMap locations={locations} locale={lang as Locale} />
     </article>
   );
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string; lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+
+  const dict = await getDictionary(lang as Locale);
+
+  return {
+    title: dict.global.showcaseMap,
+  };
 }

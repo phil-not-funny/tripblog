@@ -3,14 +3,14 @@ import { getPostBySlug, getPostSlugs } from "@/lib/posts";
 import { BlogPostType, HikeFrontmatter, HikePost } from "@/types/content";
 import { Locale } from "@/types/internationalization";
 import { getDictionary } from "../../dictionaries";
-import { ArrowUpRight, LandPlot, MapPin, TypeIcon } from "lucide-react";
 import BlogFacts, { BlogFact } from "@/components/BlogFacts";
 import { formatDateByLocale } from "@/lib/date";
+import type { Metadata } from "next";
 import BlogMdContent from "@/components/BlogMdContent";
 
 export async function generateStaticParams() {
   return Object.values(Locale).flatMap((locale) =>
-    getPostSlugs(BlogPostType.HIKE, locale).map((slug) => ({ locale, slug }))
+    getPostSlugs(BlogPostType.HIKE, locale).map((slug) => ({ locale, slug })),
   );
 }
 
@@ -24,7 +24,7 @@ export default async function HikesPage({
   const post = (await getPostBySlug(
     BlogPostType.HIKE,
     slug,
-    lang as Locale
+    lang as Locale,
   )) as HikePost;
 
   const fm = post.frontmatter;
@@ -147,3 +147,21 @@ export default async function HikesPage({
 }
 
 export const dynamic = "force-static";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string; lang: string }>;
+}): Promise<Metadata> {
+  const { slug, lang } = await params;
+
+  const post = (await getPostBySlug(
+    BlogPostType.HIKE,
+    slug,
+    lang as Locale,
+  )) as HikePost;
+
+  return {
+    title: post.frontmatter.destination,
+  };
+}

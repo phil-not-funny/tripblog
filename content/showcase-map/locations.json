@@ -2,266 +2,364 @@
   {
     "lat": 48.2083,
     "lng": 16.3731,
-    "name": "Vienna",
-    "nameExtension": "Vienna, Austria",
-    "important": true
+    "important": true,
+    "color": "#1BD16A",
+    "de": {
+      "name": "Wien",
+      "nameExtension": "Wien, Österreich",
+      "extra": "Meine Heimatstadt"
+    },
+    "en": {
+      "name": "Vienna",
+      "nameExtension": "Vienna, Austria",
+      "extra": "My hometown"
+    }
   },
   {
     "lat": 47.8095,
     "lng": 13.055,
-    "name": "Salzburg",
-    "nameExtension": "Salzburg, Austria"
+    "de": { "name": "Salzburg", "nameExtension": "Salzburg, Österreich" },
+    "en": { "name": "Salzburg", "nameExtension": "Salzburg, Austria" }
   },
   {
     "lat": 47.2692,
     "lng": 11.4041,
-    "name": "Innsbruck",
-    "nameExtension": "Tyrol, Austria"
+    "de": { "name": "Innsbruck", "nameExtension": "Tirol, Österreich" },
+    "en": { "name": "Innsbruck", "nameExtension": "Tyrol, Austria" }
   },
   {
     "lat": 47.5031,
     "lng": 9.7471,
-    "name": "Bregenz",
-    "nameExtension": "Vorarlberg, Austria"
+    "de": { "name": "Bregenz", "nameExtension": "Vorarlberg, Österreich" },
+    "en": { "name": "Bregenz", "nameExtension": "Vorarlberg, Austria" }
   },
   {
     "lat": 47.999,
     "lng": 7.8421,
-    "name": "Freiburg",
-    "nameExtension": "Baden-Württemberg, Germany"
+    "timesVisited": 2,
+    "de": {
+      "name": "Freiburg",
+      "nameExtension": "Baden-Württemberg, Deutschland",
+      "extra": "Immer geschäftlich dort gewesen"
+    },
+    "en": {
+      "name": "Freiburg",
+      "nameExtension": "Baden-Württemberg, Germany",
+      "extra": "Always business there"
+    }
   },
   {
     "lat": 53.8655,
     "lng": 10.6866,
-    "name": "Lübeck",
-    "nameExtension": "Schleswig-Holstein, Germany"
+    "de": {
+      "name": "Lübeck",
+      "nameExtension": "Schleswig-Holstein, Deutschland"
+    },
+    "en": { "name": "Lübeck", "nameExtension": "Schleswig-Holstein, Germany" }
   },
   {
     "lat": 52.3676,
     "lng": 4.9041,
-    "name": "Amsterdam",
-    "nameExtension": "North Holland, Netherlands",
-    "important": true
+    "important": true,
+    "de": { "name": "Amsterdam", "nameExtension": "Nordholland, Niederlande" },
+    "en": { "name": "Amsterdam", "nameExtension": "North Holland, Netherlands" }
   },
   {
     "lat": 52.0705,
     "lng": 4.3007,
-    "name": "Den Haag",
-    "nameExtension": "South Holland, Netherlands"
+    "de": { "name": "Den Haag", "nameExtension": "Südholland, Niederlande" },
+    "en": { "name": "Den Haag", "nameExtension": "South Holland, Netherlands" }
   },
   {
     "lat": 51.9225,
     "lng": 4.4792,
-    "name": "Rotterdam",
-    "nameExtension": "South Holland, Netherlands"
+    "de": { "name": "Rotterdam", "nameExtension": "Südholland, Niederlande" },
+    "en": { "name": "Rotterdam", "nameExtension": "South Holland, Netherlands" }
   },
   {
     "lat": 48.8566,
     "lng": 2.3522,
-    "name": "Paris",
-    "nameExtension": "Île-de-France, France",
-    "important": true
+    "important": true,
+    "de": { "name": "Paris", "nameExtension": "Île-de-France, Frankreich" },
+    "en": { "name": "Paris", "nameExtension": "Île-de-France, France" }
   },
   {
     "lat": 41.3851,
     "lng": 2.1734,
-    "name": "Barcelona",
-    "nameExtension": "Catalonia, Spain"
+    "de": { "name": "Barcelona", "nameExtension": "Katalonien, Spanien" },
+    "en": { "name": "Barcelona", "nameExtension": "Catalonia, Spain" }
   },
   {
     "lat": 38.7169,
     "lng": -9.1399,
-    "name": "Lisbon",
-    "nameExtension": "Lisbon, Portugal",
-    "important": true
+    "important": true,
+    "de": { "name": "Lissabon", "nameExtension": "Lissabon, Portugal" },
+    "en": { "name": "Lisbon", "nameExtension": "Lisbon, Portugal" }
   },
   {
     "lat": 41.1579,
     "lng": -8.6291,
-    "name": "Porto",
-    "nameExtension": "Porto, Portugal"
+    "de": { "name": "Porto", "nameExtension": "Porto, Portugal" },
+    "en": { "name": "Porto", "nameExtension": "Porto, Portugal" }
   },
   {
     "lat": 36.7213,
     "lng": -4.4214,
-    "name": "Málaga",
-    "nameExtension": "Andalusia, Spain"
+    "de": { "name": "Málaga", "nameExtension": "Andalusien, Spanien" },
+    "en": { "name": "Málaga", "nameExtension": "Andalusia, Spain" }
   },
   {
     "lat": 37.1773,
     "lng": -3.5986,
-    "name": "Granada",
-    "nameExtension": "Andalusia, Spain"
+    "de": { "name": "Granada", "nameExtension": "Andalusien, Spanien" },
+    "en": { "name": "Granada", "nameExtension": "Andalusia, Spain" }
   },
   {
     "lat": 39.5696,
     "lng": 2.6502,
-    "name": "Mallorca",
-    "nameExtension": "Balearic Islands, Spain"
+    "de": {
+      "name": "Mallorca",
+      "nameExtension": "Balearische Inseln, Spanien"
+    },
+    "en": { "name": "Mallorca", "nameExtension": "Balearic Islands, Spain" }
   },
   {
     "lat": 28.4636,
     "lng": -16.2518,
-    "name": "Tenerife",
-    "nameExtension": "Canary Islands, Spain"
+    "de": {
+      "name": "Teneriffa",
+      "nameExtension": "Kanarische Inseln, Spanien"
+    },
+    "en": { "name": "Tenerife", "nameExtension": "Canary Islands, Spain" }
   },
   {
     "lat": 39.6243,
     "lng": 19.9217,
-    "name": "Corfu",
-    "nameExtension": "Ionian Islands, Greece"
+    "timesVisited": 17,
+    "de": {
+      "name": "Korfu",
+      "nameExtension": "Ionische Inseln, Griechenland",
+      "extra": "Fast wie eine zweite heimat"
+    },
+    "en": {
+      "name": "Corfu",
+      "nameExtension": "Ionian Islands, Greece",
+      "extra": "Almost like a second home"
+    }
   },
   {
     "lat": 35.2401,
     "lng": 25.1442,
-    "name": "Crete",
-    "nameExtension": "Crete, Greece"
+    "timesVisited": 2,
+    "de": { "name": "Kreta", "nameExtension": "Kreta, Griechenland" },
+    "en": { "name": "Crete", "nameExtension": "Crete, Greece" }
   },
   {
     "lat": 42.6977,
     "lng": 23.3219,
-    "name": "Sofia",
-    "nameExtension": "Sofia, Bulgaria",
-    "important": true
+    "important": true,
+    "de": { "name": "Sofia", "nameExtension": "Sofia, Bulgarien" },
+    "en": { "name": "Sofia", "nameExtension": "Sofia, Bulgaria" }
   },
   {
     "lat": 47.4979,
     "lng": 19.0402,
-    "name": "Budapest",
-    "nameExtension": "Budapest, Hungary",
-    "important": true
+    "timesVisited": 2,
+    "important": true,
+    "de": { "name": "Budapest", "nameExtension": "Budapest, Ungarn" },
+    "en": { "name": "Budapest", "nameExtension": "Budapest, Hungary" }
   },
   {
     "lat": 50.0755,
     "lng": 14.4378,
-    "name": "Prague",
-    "nameExtension": "Bohemia, Czech Republic",
-    "important": true
+    "timesVisited": 2,
+    "important": true,
+    "de": { "name": "Prag", "nameExtension": "Böhmen, Tschechien" },
+    "en": { "name": "Prague", "nameExtension": "Bohemia, Czech Republic" }
   },
   {
     "lat": 37.9755,
     "lng": 23.7348,
-    "name": "Athens",
-    "nameExtension": "Attica, Greece",
-    "important": true
+    "important": true,
+    "de": { "name": "Athen", "nameExtension": "Attika, Griechenland" },
+    "en": { "name": "Athens", "nameExtension": "Attica, Greece" }
   },
   {
     "lat": 51.5074,
     "lng": -0.1278,
-    "name": "London",
-    "nameExtension": "England, UK",
-    "important": true
+    "timesVisited": 2,
+    "important": true,
+    "de": {
+      "name": "London",
+      "nameExtension": "England, Vereinigtes Königreich"
+    },
+    "en": { "name": "London", "nameExtension": "England, UK" }
   },
   {
     "lat": 55.9533,
     "lng": -3.1883,
-    "name": "Edinburgh",
-    "nameExtension": "Scotland, UK",
-    "important": true
+    "important": true,
+    "de": {
+      "name": "Edinburgh",
+      "nameExtension": "Schottland, Vereinigtes Königreich"
+    },
+    "en": { "name": "Edinburgh", "nameExtension": "Scotland, UK" }
   },
   {
     "lat": 53.3498,
     "lng": -6.2603,
-    "name": "Dublin",
-    "nameExtension": "Leinster, Ireland",
-    "important": true
+    "timesVisited": 2,
+    "important": true,
+    "de": {
+      "name": "Dublin",
+      "nameExtension": "Leinster, Irland",
+      "extra": "Zweites mal auf Sprachreise gewesen"
+    },
+    "en": {
+      "name": "Dublin",
+      "nameExtension": "Leinster, Ireland",
+      "extra": "Visited for the second time on a language trip"
+    }
   },
   {
     "lat": 53.2707,
     "lng": -9.0568,
-    "name": "Galway",
-    "nameExtension": "Connacht, Ireland"
+    "de": { "name": "Galway", "nameExtension": "Connacht, Irland" },
+    "en": { "name": "Galway", "nameExtension": "Connacht, Ireland" }
   },
   {
     "lat": 54.5973,
     "lng": -5.9301,
-    "name": "Belfast",
-    "nameExtension": "Northern Ireland, UK",
-    "important": true
+    "important": true,
+    "de": {
+      "name": "Belfast",
+      "nameExtension": "Nordirland, Vereinigtes Königreich"
+    },
+    "en": { "name": "Belfast", "nameExtension": "Northern Ireland, UK" }
   },
   {
     "lat": 43.7696,
     "lng": 11.2558,
-    "name": "Florence",
-    "nameExtension": "Tuscany, Italy"
+    "de": { "name": "Florenz", "nameExtension": "Toskana, Italien" },
+    "en": { "name": "Florence", "nameExtension": "Tuscany, Italy" }
   },
   {
     "lat": 45.4384,
     "lng": 10.9916,
-    "name": "Verona",
-    "nameExtension": "Veneto, Italy"
+    "de": { "name": "Verona", "nameExtension": "Venetien, Italien" },
+    "en": { "name": "Verona", "nameExtension": "Veneto, Italy" }
   },
   {
     "lat": 45.4408,
     "lng": 12.3155,
-    "name": "Venice",
-    "nameExtension": "Veneto, Italy"
+    "de": { "name": "Venedig", "nameExtension": "Venetien, Italien" },
+    "en": { "name": "Venice", "nameExtension": "Veneto, Italy" }
   },
   {
     "lat": 45.4654,
     "lng": 9.1859,
-    "name": "Milan",
-    "nameExtension": "Lombardy, Italy"
+    "de": { "name": "Mailand", "nameExtension": "Lombardei, Italien" },
+    "en": { "name": "Milan", "nameExtension": "Lombardy, Italy" }
   },
   {
     "lat": 55.0,
     "lng": -7.3086,
-    "name": "Derry",
-    "nameExtension": "Northern Ireland, UK"
+    "de": {
+      "name": "Derry",
+      "nameExtension": "Nordirland, Vereinigtes Königreich"
+    },
+    "en": { "name": "Derry", "nameExtension": "Northern Ireland, UK" }
   },
   {
     "lat": 47.0707,
     "lng": 15.4395,
-    "name": "Graz",
-    "nameExtension": "Styria, Austria"
+    "de": { "name": "Graz", "nameExtension": "Steiermark, Österreich" },
+    "en": { "name": "Graz", "nameExtension": "Styria, Austria" }
   },
   {
     "lat": 47.8454,
     "lng": 16.5254,
-    "name": "Eisenstadt",
-    "nameExtension": "Burgenland, Austria"
+    "de": { "name": "Eisenstadt", "nameExtension": "Burgenland, Österreich" },
+    "en": { "name": "Eisenstadt", "nameExtension": "Burgenland, Austria" }
   },
   {
     "lat": 48.3069,
     "lng": 14.2858,
-    "name": "Linz",
-    "nameExtension": "Upper Austria, Austria"
+    "de": { "name": "Linz", "nameExtension": "Oberösterreich, Österreich" },
+    "en": { "name": "Linz", "nameExtension": "Upper Austria, Austria" }
   },
   {
     "lat": 45.6328,
     "lng": 13.0647,
-    "name": "Bibione",
-    "nameExtension": "Veneto, Italy"
+    "de": { "name": "Bibione", "nameExtension": "Venetien, Italien" },
+    "en": { "name": "Bibione", "nameExtension": "Veneto, Italy" }
   },
   {
     "lat": 48.1439,
     "lng": 17.1098,
-    "name": "Bratislava",
-    "nameExtension": "Bratislava, Slovakia",
-    "important": true
+    "important": true,
+    "de": { "name": "Bratislava", "nameExtension": "Bratislava, Slowakei" },
+    "en": { "name": "Bratislava", "nameExtension": "Bratislava, Slovakia" }
   },
   {
     "lat": 47.1296,
     "lng": 10.2678,
-    "name": "St. Anton am Arlberg",
-    "nameExtension": "Tyrol, Austria"
+    "de": {
+      "name": "St. Anton am Arlberg",
+      "nameExtension": "Tirol, Österreich"
+    },
+    "en": { "name": "St. Anton am Arlberg", "nameExtension": "Tyrol, Austria" }
   },
   {
     "lat": 47.0072,
     "lng": 12.5344,
-    "name": "Matrei in Osttirol",
-    "nameExtension": "Tyrol, Austria"
+    "de": {
+      "name": "Matrei in Osttirol",
+      "nameExtension": "Tirol, Österreich"
+    },
+    "en": { "name": "Matrei in Osttirol", "nameExtension": "Tyrol, Austria" }
   },
   {
     "lat": 47.3256,
     "lng": 12.7981,
-    "name": "Zell am See",
-    "nameExtension": "Salzburg, Austria"
+    "timesVisited": 4,
+    "de": { "name": "Zell am See", "nameExtension": "Salzburg, Österreich" },
+    "en": { "name": "Zell am See", "nameExtension": "Salzburg, Austria" }
   },
   {
     "lat": 47.3928,
     "lng": 13.6897,
-    "name": "Schladming",
-    "nameExtension": "Styria, Austria"
+    "de": { "name": "Schladming", "nameExtension": "Steiermark, Österreich" },
+    "en": { "name": "Schladming", "nameExtension": "Styria, Austria" }
+  },
+  {
+    "lat": 44.5333,
+    "lng": 14.4667,
+    "de": { "name": "Mali Lošinj", "nameExtension": "Kvarner, Kroatien" },
+    "en": { "name": "Mali Lošinj", "nameExtension": "Kvarner, Croatia" }
+  },
+  {
+    "lat": 40.2833,
+    "lng": 23.4333,
+    "de": {
+      "name": "Chalkidiki",
+      "nameExtension": "Zentralmakedonien, Griechenland"
+    },
+    "en": { "name": "Chalkidiki", "nameExtension": "Central Macedonia, Greece" }
+  },
+  {
+    "lat": 48.1955,
+    "lng": 15.9077,
+    "color": "#1BD16A",
+    "de": {
+      "name": "Neulengbach",
+      "nameExtension": "Niederösterreich, Österreich",
+      "extra": "Meine Herkunftsstadt"
+    },
+    "en": {
+      "name": "Neulengbach",
+      "nameExtension": "Lower Austria, Austria",
+      "extra": "My origin town"
+    }
   }
 ]

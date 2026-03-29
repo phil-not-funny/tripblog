@@ -72,7 +72,7 @@
     "via": "über",
     "trips": "Reisen",
     "hikes": "Touren",
-    "theMap": "Die Karte"
+    "showcaseMap": "Showcase Karte"
   },
   "components": {
     "Navbar": {
@@ -96,6 +96,9 @@
   },
   "showcase": {
     "title": "Showcase Karte",
-    "description": "Blogeinträge scheiben dauert und macht nicht immer unbedingt Spaß. Deshalb habe ich diese Seite \"Showcase Karte\" erstellt. Sie zeigt alle Orte an denen ich jemals war. (Also fast alle)"
+    "description": "Blogeinträge scheiben dauert und macht nicht immer unbedingt Spaß. Deshalb habe ich diese Seite \"Showcase Karte\" erstellt. Sie zeigt alle Orte an denen ich jemals war. (Also fast alle)",
+    "hometownMarker": "Heimatstädte",
+    "importantMarker": "Hauptstädte",
+    "otherMarker": "Sonstige Orte"
   }
 }

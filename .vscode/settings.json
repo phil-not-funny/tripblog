@@ -4,5 +4,5 @@
     "D:/Programmierung/Web/tripblog/dictionaries"
   ],
   "i18n-ally.keystyle": "nested",
-  "conventionalCommits.scopes": ["map"]
+  "conventionalCommits.scopes": ["map", "metadata"]
 }

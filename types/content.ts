@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Locale } from "./internationalization";
 
-export enum BlogPostType {
-  TRIP = "trip",
-  HIKE = "hike",
-}
+export const BlogPostType = {
+  TRIP: "trip",
+  HIKE: "hike",
+} as const;
+export type BlogPostType = (typeof BlogPostType)[keyof typeof BlogPostType];
 
 export type FrontmatterBase = {
   title: string;
@@ -31,13 +32,14 @@ export function isFrontmatterBase(obj: any): obj is FrontmatterBase {
   );
 }
 
-export enum TripType {
-  CITY = "city",
-  NATURE = "nature",
-  BEACH = "beach",
-  WINTER = "winter",
-  PARTY = "party",
-}
+export const TripType = {
+  CITY: "city",
+  NATURE: "nature",
+  BEACH: "beach",
+  WINTER: "winter",
+  PARTY: "party",
+} as const;
+export type TripType = (typeof TripType)[keyof typeof TripType];
 
 export type TripFrontmatter = FrontmatterBase & {
   dateFrom: string;
@@ -60,24 +62,28 @@ export function isTripFrontmatter(obj: any): obj is TripFrontmatter {
   );
 }
 
-export enum HikeType {
-  CIRCULAR = "circular",
-  LINEAR = "linear",
-}
+export const HikeType = {
+  CIRCULAR: "circular",
+  LINEAR: "linear",
+} as const;
+export type HikeType = (typeof HikeType)[keyof typeof HikeType];
 
-export enum HikeDifficulty {
-  BEGINNER = "beginner",
-  INTERMEDIATE = "intermediate",
-  EXPERIENCED = "experienced",
-  EXPERT = "expert",
-}
+export const HikeDifficulty = {
+  BEGINNER: "beginner",
+  INTERMEDIATE: "intermediate",
+  EXPERIENCED: "experienced",
+  EXPERT: "expert",
+} as const;
+export type HikeDifficulty =
+  (typeof HikeDifficulty)[keyof typeof HikeDifficulty];
 
-export enum HikeSeason {
-  SPRING = "spring",
-  SUMMER = "summer",
-  AUTUMN = "autumn",
-  WINTER = "winter",
-}
+export const HikeSeason = {
+  SPRING: "spring",
+  SUMMER: "summer",
+  AUTUMN: "autumn",
+  WINTER: "winter",
+} as const;
+export type HikeSeason = (typeof HikeSeason)[keyof typeof HikeSeason];
 
 export type HikeFrontmatter = FrontmatterBase & {
   destination: string;
@@ -124,12 +130,12 @@ export type PostBase = {
 };
 
 export type HikePost = {
-  type: BlogPostType.HIKE;
+  type: "hike";
   frontmatter: HikeFrontmatter;
 } & PostBase;
 
 export type TripPost = {
-  type: BlogPostType.TRIP;
+  type: "trip";
   frontmatter: TripFrontmatter;
 } & PostBase;
 
@@ -145,8 +151,13 @@ export function isHikePosts(blogs: BlogPost[]): blogs is HikePost[] {
 export type ShowcaseMapLocation = {
   lat: number;
   lng: number;
-  name: string;
-  nameExtension?: string;
   important?: boolean;
-  extra?: string;
+  timesVisited?: number;
+  color?: string;
+} & {
+  [K in Locale]: {
+    name: string;
+    nameExtension?: string;
+    extra?: string;
+  };
 };
