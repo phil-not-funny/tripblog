@@ -40,7 +40,19 @@ export default async function LocaleLayout({
   const messages = (await import(`../../dictionaries/${lang}.json`)).default;
 
   return (
-    <html lang={lang}>
+    <html lang={lang} suppressHydrationWarning>
+      <head>
+        {/* eslint-disable-next-line react/no-danger */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            const t = localStorage.getItem('theme');
+            const d = t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (d) document.documentElement.classList.add('dark');
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-display antialiased`}
       >

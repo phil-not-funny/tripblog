@@ -18,10 +18,13 @@ export async function generateStaticParams() {
 
 export default async function TripPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ slug: string; lang: string }>;
+  searchParams: Promise<{ tab?: "blog" | "gallery" | undefined }>;
 }) {
   const { slug, lang } = await params;
+  const { tab } = await searchParams;
 
   const post = (await getPostBySlug(
     BlogPostType.TRIP,
@@ -64,7 +67,10 @@ export default async function TripPage({
         </p>
       </header>
 
-      <Tabs defaultValue="blog" className="w-full flex flex-col space-y-8">
+      <Tabs
+        defaultValue={tab ?? "blog"}
+        className="w-full flex flex-col space-y-8"
+      >
         <TabsList className=" self-center">
           <TabsTrigger value="blog" className="px-8 py-4 text-lg">
             {dict.components.PageSwitcher.blog.toUpperCase()}
