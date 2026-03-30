@@ -1,4 +1,4 @@
-import SimpleMap from "@/components/Map";
+import SimpleMap from "@/components/Map/Map";
 import { getPostBySlug, getPostSlugs } from "@/lib/posts";
 import { BlogPostType, HikeFrontmatter, HikePost } from "@/types/content";
 import { Locale } from "@/types/internationalization";

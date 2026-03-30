@@ -148,7 +148,20 @@ export function isHikePosts(blogs: BlogPost[]): blogs is HikePost[] {
   return blogs.every((blog) => blog.type === BlogPostType.HIKE);
 }
 
-export type ShowcaseMapLocation = {
+export type ShowcaseMapLocation = ShowcaseMapRegion | ShowcaseMapSpot;
+
+export type ShowcaseMapRegion = {
+  lat: number;
+  lng: number;
+  items: ShowcaseMapLocation[];
+} & {
+  [K in Locale]: {
+    name: string;
+    nameExtension?: string;
+  };
+};
+
+export type ShowcaseMapSpot = {
   lat: number;
   lng: number;
   important?: boolean;
@@ -161,3 +174,15 @@ export type ShowcaseMapLocation = {
     extra?: string;
   };
 };
+
+export function isShowcaseMapRegion(
+  location: ShowcaseMapLocation,
+): location is ShowcaseMapRegion {
+  return "items" in location && Array.isArray(location.items);
+}
+
+export function isShowcaseMapSpot(
+  location: ShowcaseMapLocation,
+): location is ShowcaseMapSpot {
+  return !("items" in location);
+}

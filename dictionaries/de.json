@@ -97,7 +97,9 @@
       "toggle": "Farbschema wechseln"
     },
     "map": {
-      "loading": "Karte lädt"
+      "loading": "Karte lädt",
+      "toolTipRegionExtra": "Reinscrollen zum expandieren",
+      "groupToggle": "Gruppierte Markierungen"
     }
   },
   "locales": {
@@ -109,6 +111,7 @@
     "description": "Blogeinträge scheiben dauert und macht nicht immer unbedingt Spaß. Deshalb habe ich diese Seite \"Showcase Karte\" erstellt. Sie zeigt alle Orte an denen ich jemals war. (Also fast alle)",
     "hometownMarker": "Heimatstädte",
     "importantMarker": "Hauptstädte",
-    "otherMarker": "Sonstige Orte"
+    "otherMarker": "Sonstige Orte",
+    "regionMarker": "Gruppierte Orte"
   }
 }

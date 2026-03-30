@@ -1,10 +1,8 @@
 import { Locale } from "@/types/internationalization";
 import { getDictionary } from "../dictionaries";
-import SimpleMap, { ShowcaseMap } from "@/components/Map";
-import { Marker } from "react-leaflet";
-import { getShowcaseMapLocations } from "@/lib/showcase";
-import { coloredMarker } from "@/components/MapClient";
 import { Metadata } from "next";
+import ShowcaseMapSiteWrapper from "@/components/Map/ShowcaseMapSiteWrapper";
+import { getShowcaseMapLocations } from "@/lib/showcase.server";
 
 export default async function TheMapPage({
   params,
@@ -26,7 +24,7 @@ export default async function TheMapPage({
           {dict.showcase.description}
         </p>
       </header>
-      <ShowcaseMap locations={locations} locale={lang as Locale} />
+      <ShowcaseMapSiteWrapper locations={locations} lang={lang as Locale} />
     </article>
   );
 }

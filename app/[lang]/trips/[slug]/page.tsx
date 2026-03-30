@@ -1,4 +1,4 @@
-import SimpleMap from "@/components/Map";
+import SimpleMap from "@/components/Map/Map";
 import { getImagePaths, getPostBySlug, getPostSlugs } from "@/lib/posts";
 import { BlogPostType, TripPost } from "@/types/content";
 import { Locale } from "@/types/internationalization";

@@ -1,37 +1,173 @@
 [
   {
-    "lat": 48.2083,
-    "lng": 16.3731,
-    "important": true,
-    "color": "#1BD16A",
-    "de": {
-      "name": "Wien",
-      "nameExtension": "Wien, Österreich",
-      "extra": "Meine Heimatstadt"
-    },
-    "en": {
-      "name": "Vienna",
-      "nameExtension": "Vienna, Austria",
-      "extra": "My hometown"
-    }
+    "lat": 47.5162,
+    "lng": 14.5501,
+    "de": { "name": "Österreich", "nameExtension": "Mitteleuropa" },
+    "en": { "name": "Austria", "nameExtension": "Central Europe" },
+    "items": [
+      {
+        "lat": 48.2083,
+        "lng": 16.3731,
+        "important": true,
+        "color": "#1BD16A",
+        "de": {
+          "name": "Wien",
+          "nameExtension": "Wien, Österreich",
+          "extra": "Meine Heimatstadt"
+        },
+        "en": {
+          "name": "Vienna",
+          "nameExtension": "Vienna, Austria",
+          "extra": "My hometown"
+        }
+      },
+      {
+        "lat": 47.8095,
+        "lng": 13.055,
+        "de": { "name": "Salzburg", "nameExtension": "Salzburg, Österreich" },
+        "en": { "name": "Salzburg", "nameExtension": "Salzburg, Austria" }
+      },
+      {
+        "lat": 47.2692,
+        "lng": 11.4041,
+        "de": { "name": "Innsbruck", "nameExtension": "Tirol, Österreich" },
+        "en": { "name": "Innsbruck", "nameExtension": "Tyrol, Austria" }
+      },
+      {
+        "lat": 47.5031,
+        "lng": 9.7471,
+        "de": { "name": "Bregenz", "nameExtension": "Vorarlberg, Österreich" },
+        "en": { "name": "Bregenz", "nameExtension": "Vorarlberg, Austria" }
+      },
+      {
+        "lat": 47.0707,
+        "lng": 15.4395,
+        "de": { "name": "Graz", "nameExtension": "Steiermark, Österreich" },
+        "en": { "name": "Graz", "nameExtension": "Styria, Austria" }
+      },
+      {
+        "lat": 47.8454,
+        "lng": 16.5254,
+        "de": {
+          "name": "Eisenstadt",
+          "nameExtension": "Burgenland, Österreich"
+        },
+        "en": { "name": "Eisenstadt", "nameExtension": "Burgenland, Austria" }
+      },
+      {
+        "lat": 48.3069,
+        "lng": 14.2858,
+        "de": { "name": "Linz", "nameExtension": "Oberösterreich, Österreich" },
+        "en": { "name": "Linz", "nameExtension": "Upper Austria, Austria" }
+      },
+      {
+        "lat": 47.1296,
+        "lng": 10.2678,
+        "de": {
+          "name": "St. Anton am Arlberg",
+          "nameExtension": "Tirol, Österreich"
+        },
+        "en": {
+          "name": "St. Anton am Arlberg",
+          "nameExtension": "Tyrol, Austria"
+        }
+      },
+      {
+        "lat": 47.0072,
+        "lng": 12.5344,
+        "de": {
+          "name": "Matrei in Osttirol",
+          "nameExtension": "Tirol, Österreich"
+        },
+        "en": {
+          "name": "Matrei in Osttirol",
+          "nameExtension": "Tyrol, Austria"
+        }
+      },
+      {
+        "lat": 47.3256,
+        "lng": 12.7981,
+        "timesVisited": 4,
+        "de": {
+          "name": "Zell am See",
+          "nameExtension": "Salzburg, Österreich"
+        },
+        "en": { "name": "Zell am See", "nameExtension": "Salzburg, Austria" }
+      },
+      {
+        "lat": 47.3928,
+        "lng": 13.6897,
+        "de": {
+          "name": "Schladming",
+          "nameExtension": "Steiermark, Österreich"
+        },
+        "en": { "name": "Schladming", "nameExtension": "Styria, Austria" }
+      },
+      {
+        "lat": 48.1955,
+        "lng": 15.9077,
+        "color": "#1BD16A",
+        "de": {
+          "name": "Neulengbach",
+          "nameExtension": "Niederösterreich, Österreich",
+          "extra": "Meine Herkunftsstadt"
+        },
+        "en": {
+          "name": "Neulengbach",
+          "nameExtension": "Lower Austria, Austria",
+          "extra": "My origin town"
+        }
+      }
+    ]
   },
   {
-    "lat": 47.8095,
-    "lng": 13.055,
-    "de": { "name": "Salzburg", "nameExtension": "Salzburg, Österreich" },
-    "en": { "name": "Salzburg", "nameExtension": "Salzburg, Austria" }
-  },
-  {
-    "lat": 47.2692,
-    "lng": 11.4041,
-    "de": { "name": "Innsbruck", "nameExtension": "Tirol, Österreich" },
-    "en": { "name": "Innsbruck", "nameExtension": "Tyrol, Austria" }
-  },
-  {
-    "lat": 47.5031,
-    "lng": 9.7471,
-    "de": { "name": "Bregenz", "nameExtension": "Vorarlberg, Österreich" },
-    "en": { "name": "Bregenz", "nameExtension": "Vorarlberg, Austria" }
+    "lat": 53.1424,
+    "lng": -7.6921,
+    "de": { "name": "Irland", "nameExtension": "Nordwesteuropa" },
+    "en": { "name": "Ireland", "nameExtension": "Northwestern Europe" },
+    "items": [
+      {
+        "lat": 53.3498,
+        "lng": -6.2603,
+        "timesVisited": 2,
+        "important": true,
+        "de": {
+          "name": "Dublin",
+          "nameExtension": "Leinster, Irland",
+          "extra": "Zweites mal auf Sprachreise gewesen"
+        },
+        "en": {
+          "name": "Dublin",
+          "nameExtension": "Leinster, Ireland",
+          "extra": "Visited for the second time on a language trip"
+        }
+      },
+      {
+        "lat": 53.2707,
+        "lng": -9.0568,
+        "de": { "name": "Galway", "nameExtension": "Connacht, Irland" },
+        "en": { "name": "Galway", "nameExtension": "Connacht, Ireland" }
+      },
+      {
+        "lat": 54.5973,
+        "lng": -5.9301,
+        "important": true,
+        "de": {
+          "name": "Belfast",
+          "nameExtension": "Nordirland, Vereinigtes Königreich"
+        },
+        "en": { "name": "Belfast", "nameExtension": "Northern Ireland, UK" }
+      },
+      {
+        "lat": 55.0,
+        "lng": -7.3086,
+        "de": {
+          "name": "Derry",
+          "nameExtension": "Nordirland, Vereinigtes Königreich"
+        },
+        "en": { "name": "Derry", "nameExtension": "Northern Ireland, UK" }
+      }
+    ]
   },
   {
     "lat": 47.999,
@@ -206,38 +342,6 @@
     "en": { "name": "Edinburgh", "nameExtension": "Scotland, UK" }
   },
   {
-    "lat": 53.3498,
-    "lng": -6.2603,
-    "timesVisited": 2,
-    "important": true,
-    "de": {
-      "name": "Dublin",
-      "nameExtension": "Leinster, Irland",
-      "extra": "Zweites mal auf Sprachreise gewesen"
-    },
-    "en": {
-      "name": "Dublin",
-      "nameExtension": "Leinster, Ireland",
-      "extra": "Visited for the second time on a language trip"
-    }
-  },
-  {
-    "lat": 53.2707,
-    "lng": -9.0568,
-    "de": { "name": "Galway", "nameExtension": "Connacht, Irland" },
-    "en": { "name": "Galway", "nameExtension": "Connacht, Ireland" }
-  },
-  {
-    "lat": 54.5973,
-    "lng": -5.9301,
-    "important": true,
-    "de": {
-      "name": "Belfast",
-      "nameExtension": "Nordirland, Vereinigtes Königreich"
-    },
-    "en": { "name": "Belfast", "nameExtension": "Northern Ireland, UK" }
-  },
-  {
     "lat": 43.7696,
     "lng": 11.2558,
     "de": { "name": "Florenz", "nameExtension": "Toskana, Italien" },
@@ -262,33 +366,6 @@
     "en": { "name": "Milan", "nameExtension": "Lombardy, Italy" }
   },
   {
-    "lat": 55.0,
-    "lng": -7.3086,
-    "de": {
-      "name": "Derry",
-      "nameExtension": "Nordirland, Vereinigtes Königreich"
-    },
-    "en": { "name": "Derry", "nameExtension": "Northern Ireland, UK" }
-  },
-  {
-    "lat": 47.0707,
-    "lng": 15.4395,
-    "de": { "name": "Graz", "nameExtension": "Steiermark, Österreich" },
-    "en": { "name": "Graz", "nameExtension": "Styria, Austria" }
-  },
-  {
-    "lat": 47.8454,
-    "lng": 16.5254,
-    "de": { "name": "Eisenstadt", "nameExtension": "Burgenland, Österreich" },
-    "en": { "name": "Eisenstadt", "nameExtension": "Burgenland, Austria" }
-  },
-  {
-    "lat": 48.3069,
-    "lng": 14.2858,
-    "de": { "name": "Linz", "nameExtension": "Oberösterreich, Österreich" },
-    "en": { "name": "Linz", "nameExtension": "Upper Austria, Austria" }
-  },
-  {
     "lat": 45.6328,
     "lng": 13.0647,
     "de": { "name": "Bibione", "nameExtension": "Venetien, Italien" },
@@ -300,37 +377,6 @@
     "important": true,
     "de": { "name": "Bratislava", "nameExtension": "Bratislava, Slowakei" },
     "en": { "name": "Bratislava", "nameExtension": "Bratislava, Slovakia" }
-  },
-  {
-    "lat": 47.1296,
-    "lng": 10.2678,
-    "de": {
-      "name": "St. Anton am Arlberg",
-      "nameExtension": "Tirol, Österreich"
-    },
-    "en": { "name": "St. Anton am Arlberg", "nameExtension": "Tyrol, Austria" }
-  },
-  {
-    "lat": 47.0072,
-    "lng": 12.5344,
-    "de": {
-      "name": "Matrei in Osttirol",
-      "nameExtension": "Tirol, Österreich"
-    },
-    "en": { "name": "Matrei in Osttirol", "nameExtension": "Tyrol, Austria" }
-  },
-  {
-    "lat": 47.3256,
-    "lng": 12.7981,
-    "timesVisited": 4,
-    "de": { "name": "Zell am See", "nameExtension": "Salzburg, Österreich" },
-    "en": { "name": "Zell am See", "nameExtension": "Salzburg, Austria" }
-  },
-  {
-    "lat": 47.3928,
-    "lng": 13.6897,
-    "de": { "name": "Schladming", "nameExtension": "Steiermark, Österreich" },
-    "en": { "name": "Schladming", "nameExtension": "Styria, Austria" }
   },
   {
     "lat": 44.5333,
@@ -346,21 +392,6 @@
       "nameExtension": "Zentralmakedonien, Griechenland"
     },
     "en": { "name": "Chalkidiki", "nameExtension": "Central Macedonia, Greece" }
-  },
-  {
-    "lat": 48.1955,
-    "lng": 15.9077,
-    "color": "#1BD16A",
-    "de": {
-      "name": "Neulengbach",
-      "nameExtension": "Niederösterreich, Österreich",
-      "extra": "Meine Herkunftsstadt"
-    },
-    "en": {
-      "name": "Neulengbach",
-      "nameExtension": "Lower Austria, Austria",
-      "extra": "My origin town"
-    }
   },
   {
     "lat": 40.0863,

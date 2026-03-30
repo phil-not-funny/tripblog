@@ -97,7 +97,9 @@
       "toggle": "Toggle Theme"
     },
     "map": {
-      "loading": "Loading Map"
+      "loading": "Loading Map",
+      "toolTipRegionExtra": "Zoom to expand",
+      "groupToggle": "Grouped Markers"
     }
   },
   "locales": {
@@ -109,6 +111,7 @@
     "description": "Writing blogs takes time. That's why my showcase map is here to help! This map contains a marker for all significant locations I've ever been to. Enjoy",
     "hometownMarker": "Hometowns",
     "importantMarker": "Capital Cities",
-    "otherMarker": "Other"
+    "otherMarker": "Other",
+    "regionMarker": "Grouped Entries"
   }
 }

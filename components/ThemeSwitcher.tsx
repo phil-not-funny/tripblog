@@ -13,7 +13,12 @@ export default function ThemeSwitcher() {
   const [dark, setDark] = useState<boolean | null>(null);
 
   useEffect(() => {
-    setDark(document.documentElement.classList.contains("dark"));
+    const theme = localStorage.getItem("theme");
+    const isDark = theme
+      ? theme === "dark"
+      : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (isDark) document.documentElement.classList.add("dark");
+    setDark(isDark);
   }, []);
 
   function toggle() {
