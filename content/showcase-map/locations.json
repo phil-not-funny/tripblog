@@ -555,17 +555,185 @@
   {
     "lat": 39.6243,
     "lng": 19.9217,
+    "zoomThreshold": 8,
     "timesVisited": 17,
     "de": {
       "name": "Korfu",
       "nameExtension": "Ionische Inseln, Griechenland",
-      "extra": "Fast wie eine zweite heimat"
+      "extra": "Isges. 17 mal dort gewesen."
     },
     "en": {
       "name": "Corfu",
       "nameExtension": "Ionian Islands, Greece",
-      "extra": "Almost like a second home"
-    }
+      "extra": "Been there a total of 17 times."
+    },
+    "items": [
+      {
+        "lat": 39.79374915002065,
+        "lng": 19.820835017169298,
+        "timesVisited": 17,
+        "de": { "name": "Acharavi", "nameExtension": "Korfu, Griechenland" },
+        "en": { "name": "Acharavi", "nameExtension": "Corfu, Greece" }
+      },
+      {
+        "lat": 39.792879781002874,
+        "lng": 19.70948997840085,
+        "de": { "name": "Sidari", "nameExtension": "Korfu, Griechenland" },
+        "en": { "name": "Sidari", "nameExtension": "Corfu, Greece" }
+      },
+      {
+        "lat": 39.794907895571804,
+        "lng": 19.673595303573567,
+        "nature": true,
+        "de": { "name": "Kap Drastis", "nameExtension": "Korfu, Griechenland" },
+        "en": { "name": "Cape Drastis", "nameExtension": "Corfu, Greece" }
+      },
+      {
+        "lat": 39.78786594553924,
+        "lng": 19.6664700664639,
+        "nature": true,
+        "de": {
+          "name": "Loggas Beach",
+          "nameExtension": "Korfu, Griechenland"
+        },
+        "en": { "name": "Loggas Beach", "nameExtension": "Corfu, Greece" }
+      },
+      {
+        "lat": 39.75509300721419,
+        "lng": 19.642494433118937,
+        "de": {
+          "name": "Agios Stefanos",
+          "nameExtension": "Korfu, Griechenland"
+        },
+        "en": { "name": "Agios Stefanos", "nameExtension": "Corfu, Greece" }
+      },
+      {
+        "lat": 39.72237079212892,
+        "lng": 19.660369745521827,
+        "de": { "name": "Afionas", "nameExtension": "Korfu, Griechenland" },
+        "en": { "name": "Afionas", "nameExtension": "Corfu, Greece" }
+      },
+      {
+        "lat": 39.71518293492234,
+        "lng": 19.65788341744399,
+        "nature": true,
+        "de": {
+          "name": "Porto Timoni",
+          "nameExtension": "Korfu, Griechenland"
+        },
+        "en": { "name": "Porto Timoni", "nameExtension": "Corfu, Greece" }
+      },
+      {
+        "lat": 39.718358319289266,
+        "lng": 19.678176737872146,
+        "de": {
+          "name": "Agios Georgios",
+          "nameExtension": "Korfu, Griechenland"
+        },
+        "en": { "name": "Agios Georgios", "nameExtension": "Corfu, Greece" }
+      },
+      {
+        "lat": 39.67263105747509,
+        "lng": 19.706807251697267,
+        "nature": true,
+        "de": {
+          "name": "Paleokastritsa",
+          "nameExtension": "Korfu, Griechenland"
+        },
+        "en": { "name": "Paleokastritsas", "nameExtension": "Corfu, Greece" }
+      },
+      {
+        "lat": 39.69179054260025,
+        "lng": 19.68061842932494,
+        "nature": true,
+        "de": {
+          "name": "Der Römerweg",
+          "nameExtension": "Korfu, Griechenland"
+        },
+        "en": { "name": "The Donkey Path", "nameExtension": "Corfu, Greece" }
+      },
+      {
+        "lat": 39.66904689422417,
+        "lng": 19.739902585145362,
+        "de": { "name": "Liapades", "nameExtension": "Korfu, Griechenland" },
+        "en": { "name": "Liapades", "nameExtension": "Corfu, Greece" }
+      },
+      {
+        "lat": 39.7479276742801,
+        "lng": 19.87208954633498,
+        "nature": true,
+        "de": { "name": "Pantokrator", "nameExtension": "Korfu, Griechenland" },
+        "en": { "name": "Pantokrator", "nameExtension": "Corfu, Greece" }
+      },
+      {
+        "lat": 39.78234461413121,
+        "lng": 19.943365912339512,
+        "nature": true,
+        "de": {
+          "name": "Avlaki East Beach",
+          "nameExtension": "Korfu, Griechenland"
+        },
+        "en": { "name": "Avlaki East Beach", "nameExtension": "Corfu, Greece" }
+      },
+      {
+        "lat": 39.79020934579057,
+        "lng": 19.922222239329425,
+        "de": { "name": "Kassiopi", "nameExtension": "Korfu, Griechenland" },
+        "en": { "name": "Kassiopi", "nameExtension": "Corfu, Greece" }
+      },
+      {
+        "lat": 39.79891960217593,
+        "lng": 19.885202392643873,
+        "nature": true,
+        "de": {
+          "name": "Kalamaki Beach",
+          "nameExtension": "Korfu, Griechenland"
+        },
+        "en": { "name": "Kalamaki Beach", "nameExtension": "Corfu, Greece" }
+      },
+      {
+        "lat": 39.81557447242646,
+        "lng": 19.861076500522614,
+        "de": {
+          "name": "Agios Spiridon",
+          "nameExtension": "Korfu, Griechenland"
+        },
+        "en": { "name": "Agios Spiridon", "nameExtension": "Corfu, Greece" }
+      },
+      {
+        "lat": 39.81243064801782,
+        "lng": 19.83675561091845,
+        "nature": true,
+        "de": {
+          "name": "Almiros Beach",
+          "nameExtension": "Korfu, Griechenland"
+        },
+        "en": { "name": "Almiros Beach", "nameExtension": "Corfu, Greece" }
+      },
+      {
+        "lat": 39.76515809667127,
+        "lng": 19.87570731606081,
+        "de": {
+          "name": "Paleo Perithea",
+          "nameExtension": "Korfu, Griechenland"
+        },
+        "en": { "name": "Paleo Perithea", "nameExtension": "Corfu, Greece" }
+      },
+      {
+        "lat": 39.756239378107,
+        "lng": 19.7833259702127,
+        "nature": true,
+        "de": { "name": "Nymfes", "nameExtension": "Korfu, Griechenland" },
+        "en": { "name": "Nymfes", "nameExtension": "Corfu, Greece" }
+      },
+      {
+        "lat": 39.74424639965822,
+        "lng": 19.8370799080762,
+        "nature": true,
+        "de": { "name": "Strinilas", "nameExtension": "Korfu, Griechenland" },
+        "en": { "name": "Strinilas", "nameExtension": "Corfu, Greece" }
+      }
+    ]
   },
   {
     "lat": 35.2401,

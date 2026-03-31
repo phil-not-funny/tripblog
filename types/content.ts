@@ -150,9 +150,14 @@ export function isHikePosts(blogs: BlogPost[]): blogs is HikePost[] {
 
 export type ShowcaseMapLocation = ShowcaseMapRegion | ShowcaseMapSpot;
 
-export type ShowcaseMapRegion = {
+export type ShowcaseMapLocationBase = {
   lat: number;
   lng: number;
+  timesVisited?: number;
+};
+
+export type ShowcaseMapRegion = ShowcaseMapLocationBase & {
+  zoomThreshold?: number;
   items: ShowcaseMapLocation[];
 } & {
   [K in Locale]: {
@@ -161,12 +166,9 @@ export type ShowcaseMapRegion = {
   };
 };
 
-export type ShowcaseMapSpot = {
-  lat: number;
-  lng: number;
+export type ShowcaseMapSpot = ShowcaseMapLocationBase & {
   important?: boolean;
   nature?: boolean;
-  timesVisited?: number;
   color?: string;
 } & {
   [K in Locale]: {

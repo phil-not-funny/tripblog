@@ -232,53 +232,68 @@ export function RegionMarkers({
   const t = useTranslations();
 
   useEffect(() => {
-    const regionLayer = L.layerGroup();
-    const detailLayer = L.layerGroup();
+    const plainLayer = L.layerGroup();
+
+    // each region gets its own { parentLayer, childLayer, threshold } tuple
+    const regionGroups: {
+      parentLayer: L.LayerGroup;
+      childLayer: L.LayerGroup;
+      threshold: number;
+    }[] = [];
 
     locations.forEach((location) => {
       if (isShowcaseMapRegion(location)) {
-        // this is a region — show parent marker at low zoom
+        const threshold = location.zoomThreshold ?? regionZoomThreshold;
+        const parentLayer = L.layerGroup();
+        const childLayer = L.layerGroup();
+
         const marker = addMarker(
           location,
           locale,
-          regionLayer,
+          parentLayer,
           true,
           t("components.map.toolTipRegionExtra"),
         );
         marker.addEventListener("click", () => {
-          map.setView(marker.getLatLng(), regionZoomThreshold + 1);
+          map.setView(marker.getLatLng(), threshold + 1);
         });
-        // show children at high zoom
-        location.items.forEach((child) =>
-          addMarker(child, locale, detailLayer),
-        );
+
+        location.items.forEach((child) => addMarker(child, locale, childLayer));
+
+        regionGroups.push({ parentLayer, childLayer, threshold });
       } else {
-        // plain location — show at all zoom levels via detail layer
-        addMarker(location, locale, detailLayer);
-        addMarker(location, locale, regionLayer);
+        addMarker(location, locale, plainLayer);
       }
     });
 
     const update = () => {
       const zoom = map.getZoom();
-      if (zoom <= regionZoomThreshold) {
-        map.addLayer(regionLayer);
-        map.removeLayer(detailLayer);
-      } else {
-        map.removeLayer(regionLayer);
-        map.addLayer(detailLayer);
-      }
+      regionGroups.forEach(({ parentLayer, childLayer, threshold }) => {
+        if (zoom <= threshold) {
+          map.addLayer(parentLayer);
+          map.removeLayer(childLayer);
+        } else {
+          map.removeLayer(parentLayer);
+          map.addLayer(childLayer);
+        }
+      });
     };
+
+    map.addLayer(plainLayer);
+    regionGroups.forEach(({ parentLayer }) => map.addLayer(parentLayer));
 
     update();
     map.on("zoomend", update);
 
     return () => {
       map.off("zoomend", update);
-      map.removeLayer(regionLayer);
-      map.removeLayer(detailLayer);
+      map.removeLayer(plainLayer);
+      regionGroups.forEach(({ parentLayer, childLayer }) => {
+        map.removeLayer(parentLayer);
+        map.removeLayer(childLayer);
+      });
     };
-  }, [map, locations, locale, regionZoomThreshold]);
+  }, [map, locations, locale, regionZoomThreshold, t]);
 
   return null;
 }
