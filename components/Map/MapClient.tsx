@@ -97,10 +97,6 @@ export function ShowcaseMap({
 
   const markers = [
     {
-      color: "#1BD16A",
-      id: "hometownMarker",
-    },
-    {
       color: "#E33B17",
       id: "importantMarker",
     },
@@ -111,6 +107,10 @@ export function ShowcaseMap({
     {
       color: "#D11B82",
       id: "regionMarker",
+    },
+    {
+      color: "#1BD16A",
+      id: "natureMarker",
     },
   ];
 

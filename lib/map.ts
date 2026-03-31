@@ -39,7 +39,12 @@ export function addMarker(
     icon: coloredMarker(
       regioned || isShowcaseMapRegion(location)
         ? "#D11B82"
-        : (location.color ?? (location.important ? "#ef4444" : "#3b82f6")),
+        : (location.color ??
+            (location.important
+              ? "#ef4444"
+              : location.nature
+                ? "#10B981"
+                : "#3b82f6")),
     ),
   });
   marker.bindTooltip(

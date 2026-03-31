@@ -1,6 +1,7 @@
 {
   "home": {
-    "welcome": "Welcome to my blog"
+    "welcome": "Philip's Blog",
+    "description": "Welcome to my blog! Here I share my travel experiences, hiking adventures, and much more. Feel free to explore and join me on my journeys!"
   },
   "trips": {
     "dynamic": {
@@ -112,6 +113,7 @@
     "hometownMarker": "Hometowns",
     "importantMarker": "Capital Cities",
     "otherMarker": "Other",
-    "regionMarker": "Grouped Entries"
+    "regionMarker": "Grouped Entries",
+    "natureMarker": "Nature Destinations"
   }
 }

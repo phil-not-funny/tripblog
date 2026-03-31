@@ -1,6 +1,7 @@
 {
   "home": {
-    "welcome": "Willkommen auf meinem Blog"
+    "welcome": "Philip's Blog",
+    "description": "Willkommen auf meinem Blog! Hier teile ich meine Reiseerlebnisse, Wanderabenteuer und vieles mehr. Viel Spaß beim Stöbern und Begleiten meiner Reisen!"
   },
   "trips": {
     "dynamic": {
@@ -112,6 +113,7 @@
     "hometownMarker": "Heimatstädte",
     "importantMarker": "Hauptstädte",
     "otherMarker": "Sonstige Orte",
-    "regionMarker": "Gruppierte Orte"
+    "regionMarker": "Gruppierte Orte",
+    "natureMarker": "Naturorte"
   }
 }

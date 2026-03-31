@@ -165,6 +165,7 @@ export type ShowcaseMapSpot = {
   lat: number;
   lng: number;
   important?: boolean;
+  nature?: boolean;
   timesVisited?: number;
   color?: string;
 } & {

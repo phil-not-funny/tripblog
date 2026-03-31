@@ -8,8 +8,8 @@
       {
         "lat": 48.2083,
         "lng": 16.3731,
+        "color": "#131413",
         "important": true,
-        "color": "#1BD16A",
         "de": {
           "name": "Wien",
           "nameExtension": "Wien, Österreich",
@@ -63,6 +63,7 @@
       {
         "lat": 47.1296,
         "lng": 10.2678,
+        "nature": true,
         "de": {
           "name": "St. Anton am Arlberg",
           "nameExtension": "Tirol, Österreich"
@@ -75,6 +76,7 @@
       {
         "lat": 47.0072,
         "lng": 12.5344,
+        "nature": true,
         "de": {
           "name": "Matrei in Osttirol",
           "nameExtension": "Tirol, Österreich"
@@ -88,6 +90,7 @@
         "lat": 47.3256,
         "lng": 12.7981,
         "timesVisited": 4,
+        "nature": true,
         "de": {
           "name": "Zell am See",
           "nameExtension": "Salzburg, Österreich"
@@ -97,6 +100,7 @@
       {
         "lat": 47.3928,
         "lng": 13.6897,
+        "nature": true,
         "de": {
           "name": "Schladming",
           "nameExtension": "Steiermark, Österreich"
@@ -106,7 +110,6 @@
       {
         "lat": 48.1955,
         "lng": 15.9077,
-        "color": "#1BD16A",
         "de": {
           "name": "Neulengbach",
           "nameExtension": "Niederösterreich, Österreich",
@@ -166,6 +169,287 @@
           "nameExtension": "Nordirland, Vereinigtes Königreich"
         },
         "en": { "name": "Derry", "nameExtension": "Northern Ireland, UK" }
+      },
+      {
+        "lat": 53.0369,
+        "lng": -9.2875,
+        "de": {
+          "name": "Lisdoonvarna",
+          "nameExtension": "County Clare, Irland"
+        },
+        "en": {
+          "name": "Lisdoonvarna",
+          "nameExtension": "County Clare, Ireland"
+        }
+      },
+      {
+        "lat": 52.9715,
+        "lng": -9.4309,
+        "nature": true,
+        "de": {
+          "name": "Cliffs of Moher",
+          "nameExtension": "County Clare, Irland"
+        },
+        "en": {
+          "name": "Cliffs of Moher",
+          "nameExtension": "County Clare, Ireland"
+        }
+      },
+      {
+        "lat": 53.0144,
+        "lng": -9.3786,
+        "de": { "name": "Doolin", "nameExtension": "County Clare, Irland" },
+        "en": { "name": "Doolin", "nameExtension": "County Clare, Ireland" }
+      },
+      {
+        "lat": 53.007569,
+        "lng": -9.002442,
+        "nature": true,
+        "de": {
+          "name": "Mullaghmore (The Burren)",
+          "nameExtension": "County Clare, Irland"
+        },
+        "en": {
+          "name": "Mullaghmore (The Burren)",
+          "nameExtension": "County Clare, Ireland"
+        }
+      },
+      {
+        "lat": 53.4869,
+        "lng": -10.0203,
+        "de": { "name": "Clifden", "nameExtension": "County Galway, Irland" },
+        "en": { "name": "Clifden", "nameExtension": "County Galway, Ireland" }
+      },
+      {
+        "lat": 53.5583,
+        "lng": -9.8886,
+        "nature": true,
+        "de": {
+          "name": "Kylemore Abbey",
+          "nameExtension": "County Galway, Irland"
+        },
+        "en": {
+          "name": "Kylemore Abbey",
+          "nameExtension": "County Galway, Ireland"
+        }
+      },
+      {
+        "lat": 53.5461,
+        "lng": -9.9006,
+        "nature": true,
+        "de": {
+          "name": "Diamond Hill",
+          "nameExtension": "County Galway, Irland"
+        },
+        "en": {
+          "name": "Diamond Hill",
+          "nameExtension": "County Galway, Ireland"
+        }
+      },
+      {
+        "lat": 53.8008,
+        "lng": -9.5228,
+        "de": { "name": "Westport", "nameExtension": "County Mayo, Irland" },
+        "en": { "name": "Westport", "nameExtension": "County Mayo, Ireland" }
+      },
+      {
+        "lat": 53.966888,
+        "lng": -10.194825,
+        "nature": true,
+        "de": {
+          "name": "Keem Beach",
+          "nameExtension": "Achill Island, Irland"
+        },
+        "en": {
+          "name": "Keem Beach",
+          "nameExtension": "Achill Island, Ireland"
+        }
+      },
+      {
+        "lat": 54.300593,
+        "lng": -10.000272,
+        "nature": true,
+        "de": { "name": "Erris Head", "nameExtension": "County Mayo, Irland" },
+        "en": { "name": "Erris Head", "nameExtension": "County Mayo, Ireland" }
+      },
+      {
+        "lat": 54.326282,
+        "lng": -9.347374,
+        "nature": true,
+        "de": {
+          "name": "Downpatrick Head",
+          "nameExtension": "County Mayo, Irland"
+        },
+        "en": {
+          "name": "Downpatrick Head",
+          "nameExtension": "County Mayo, Ireland"
+        }
+      },
+      {
+        "lat": 54.4583,
+        "lng": -8.45,
+        "nature": true,
+        "de": {
+          "name": "Mullaghmore Head",
+          "nameExtension": "County Sligo, Irland"
+        },
+        "en": {
+          "name": "Mullaghmore Head",
+          "nameExtension": "County Sligo, Ireland"
+        }
+      },
+      {
+        "lat": 54.363459,
+        "lng": -8.498451,
+        "nature": true,
+        "de": { "name": "Benbulbin", "nameExtension": "County Sligo, Irland" },
+        "en": { "name": "Benbulbin", "nameExtension": "County Sligo, Ireland" }
+      },
+      {
+        "lat": 54.370739,
+        "lng": -8.414819,
+        "nature": true,
+        "de": {
+          "name": "Gleniff Horseshoe",
+          "nameExtension": "County Sligo, Irland"
+        },
+        "en": {
+          "name": "Gleniff Horseshoe",
+          "nameExtension": "County Sligo, Ireland"
+        }
+      },
+      {
+        "lat": 54.2697,
+        "lng": -8.4694,
+        "de": { "name": "Sligo", "nameExtension": "County Sligo, Irland" },
+        "en": { "name": "Sligo", "nameExtension": "County Sligo, Ireland" }
+      },
+      {
+        "lat": 54.6333,
+        "lng": -8.4333,
+        "de": {
+          "name": "Killybegs",
+          "nameExtension": "County Donegal, Irland"
+        },
+        "en": {
+          "name": "Killybegs",
+          "nameExtension": "County Donegal, Ireland"
+        }
+      },
+      {
+        "lat": 54.639689,
+        "lng": -8.682819,
+        "nature": true,
+        "de": {
+          "name": "Slieve League",
+          "nameExtension": "County Donegal, Irland"
+        },
+        "en": {
+          "name": "Slieve League",
+          "nameExtension": "County Donegal, Ireland"
+        }
+      },
+      {
+        "lat": 54.664314,
+        "lng": -8.778878,
+        "nature": true,
+        "de": {
+          "name": "Silver Strand",
+          "nameExtension": "County Donegal, Irland"
+        },
+        "en": {
+          "name": "Silver Strand",
+          "nameExtension": "County Donegal, Ireland"
+        }
+      },
+      {
+        "lat": 55.034204,
+        "lng": -8.112941,
+        "nature": true,
+        "de": {
+          "name": "Mount Errigal",
+          "nameExtension": "County Donegal, Irland"
+        },
+        "en": {
+          "name": "Mount Errigal",
+          "nameExtension": "County Donegal, Ireland"
+        }
+      },
+      {
+        "lat": 55.380897,
+        "lng": -7.373743,
+        "nature": true,
+        "de": {
+          "name": "Malin Head",
+          "nameExtension": "County Donegal, Irland"
+        },
+        "en": {
+          "name": "Malin Head",
+          "nameExtension": "County Donegal, Ireland"
+        }
+      },
+      {
+        "lat": 54.9508,
+        "lng": -7.7333,
+        "de": {
+          "name": "Letterkenny",
+          "nameExtension": "County Donegal, Irland"
+        },
+        "en": {
+          "name": "Letterkenny",
+          "nameExtension": "County Donegal, Ireland"
+        }
+      },
+      {
+        "lat": 55.2081,
+        "lng": -6.6594,
+        "de": {
+          "name": "Portrush",
+          "nameExtension": "County Antrim, Nordirland"
+        },
+        "en": {
+          "name": "Portrush",
+          "nameExtension": "County Antrim, Northern Ireland"
+        }
+      },
+      {
+        "lat": 55.2408,
+        "lng": -6.5117,
+        "nature": true,
+        "de": {
+          "name": "Giant's Causeway",
+          "nameExtension": "County Antrim, Nordirland"
+        },
+        "en": {
+          "name": "Giant's Causeway",
+          "nameExtension": "County Antrim, Northern Ireland"
+        }
+      },
+      {
+        "lat": 55.2361,
+        "lng": -6.3306,
+        "nature": true,
+        "de": {
+          "name": "Carrick-a-Rede",
+          "nameExtension": "County Antrim, Nordirland"
+        },
+        "en": {
+          "name": "Carrick-a-Rede",
+          "nameExtension": "County Antrim, Northern Ireland"
+        }
+      },
+      {
+        "lat": 54.142106,
+        "lng": -5.980037,
+        "nature": true,
+        "de": {
+          "name": "Slieve Binnian (Silent Valley)",
+          "nameExtension": "County Down, Nordirland"
+        },
+        "en": {
+          "name": "Slieve Binnian (Silent Valley)",
+          "nameExtension": "County Down, Northern Ireland"
+        }
       }
     ]
   },
@@ -348,6 +632,12 @@
     "en": { "name": "Florence", "nameExtension": "Tuscany, Italy" }
   },
   {
+    "lat": 45.5997,
+    "lng": 12.8831,
+    "de": { "name": "Caorle", "nameExtension": "Venetien, Italien" },
+    "en": { "name": "Caorle", "nameExtension": "Veneto, Italy" }
+  },
+  {
     "lat": 45.4384,
     "lng": 10.9916,
     "de": { "name": "Verona", "nameExtension": "Venetien, Italien" },
@@ -396,6 +686,7 @@
   {
     "lat": 40.0863,
     "lng": 22.3581,
+    "nature": true,
     "de": { "name": "Olymp", "nameExtension": "Thessalien, Griechenland" },
     "en": { "name": "Mount Olympus", "nameExtension": "Thessaly, Greece" }
   },
